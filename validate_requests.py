@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import pathlib
+import re
 import sys
 
 TARGETS = {
@@ -21,6 +22,7 @@ TARGETS = {
 }
 
 ROOT = pathlib.Path(__file__).resolve().parent
+REQUEST_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$")
 
 ALLOWED_OPS = {
     "LEASE_ACQUIRE",
@@ -50,6 +52,12 @@ def validate(path: pathlib.Path) -> list[str]:
     except Exception as exc:
         return [f"{path}: invalid JSON: {exc}"]
 
+    request_id=str(req.get("request_id") or "")
+    if not REQUEST_ID_RE.fullmatch(request_id):
+        errors.append(f"{path}: invalid request_id")
+    elif path.name != request_id + ".json":
+        errors.append(f"{path}: filename must equal request_id + .json")
+
     if req.get("schema")!="LUKE_QUEST_ENV_GATEWAY_REQUEST:v1":
         errors.append(f"{path}: schema mismatch")
     if req.get("lane_id")!=lane:
@@ -74,8 +82,17 @@ def validate(path: pathlib.Path) -> list[str]:
 def main():
     files=sorted(ROOT.glob("requests/*/*.json"))
     errors=[]
+    seen={}
     for path in files:
         errors.extend(validate(path))
+        try:
+            request_id=str(json.loads(path.read_text(encoding="utf-8")).get("request_id") or "")
+        except Exception:
+            continue
+        if request_id in seen:
+            errors.append(f"duplicate request_id {request_id}: {seen[request_id]} and {path}")
+        else:
+            seen[request_id]=path
     if errors:
         print("\n".join(errors))
         raise SystemExit(1)
