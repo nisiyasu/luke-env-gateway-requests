@@ -4,10 +4,14 @@ on:
   push:
     paths:
       - "requests/**/*.json"
+      - "evidence-requests/**/*.json"
+      - "evidence-publish/**/*.json"
       - "validate_requests.py"
   pull_request:
     paths:
       - "requests/**/*.json"
+      - "evidence-requests/**/*.json"
+      - "evidence-publish/**/*.json"
       - "validate_requests.py"
   workflow_dispatch:
 
