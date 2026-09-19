@@ -20,6 +20,8 @@ TARGETS = {
     },
 }
 
+ROOT = pathlib.Path(__file__).resolve().parent
+
 ALLOWED_OPS = {
     "LEASE_ACQUIRE",
     "LEASE_HEARTBEAT",
@@ -38,9 +40,10 @@ def canonical(value):
 
 def validate(path: pathlib.Path) -> list[str]:
     errors=[]
-    parts=path.as_posix().split("/")
+    rel=path.relative_to(ROOT).as_posix()
+    parts=rel.split("/")
     if len(parts)!=3 or parts[0]!="requests" or parts[1] not in TARGETS:
-        return [f"{path}: invalid request path"]
+        return [f"{rel}: invalid request path"]
     lane=parts[1]
     try:
         req=json.loads(path.read_text(encoding="utf-8"))
@@ -69,8 +72,7 @@ def validate(path: pathlib.Path) -> list[str]:
     return errors
 
 def main():
-    root=pathlib.Path(__file__).resolve().parent
-    files=sorted(root.glob("requests/*/*.json"))
+    files=sorted(ROOT.glob("requests/*/*.json"))
     errors=[]
     for path in files:
         errors.extend(validate(path))
