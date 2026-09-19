@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-09-19T23:07:43.569540Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "e6536371eddcc7fb5cf5803568216f008011a5f1",
+    "target_source_commit_sha": "0d225f77944eb54eed648b76f00869879f4284ff"
+  },
+  "lane_id": "village",
+  "lease_epoch": 0,
+  "operation_id": "request-channel-actions-canary-op",
+  "operation_type": "LEASE_ACQUIRE",
+  "owner_run_id": "request-channel-actions-canary",
+  "payload": {},
+  "request_id": "request-channel-actions-canary-v2",
+  "request_sha256": "dde1669460355658d7c2e0e4f1e6ec3727b320f5dbe5a35786672d9828779ca0",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
