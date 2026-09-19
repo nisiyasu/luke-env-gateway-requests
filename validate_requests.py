@@ -69,7 +69,7 @@ def validate(path: pathlib.Path) -> list[str]:
     return errors
 
 def main():
-    root=pathlib.Path(".")
+    root=pathlib.Path(__file__).resolve().parent
     files=sorted(root.glob("requests/*/*.json"))
     errors=[]
     for path in files:
