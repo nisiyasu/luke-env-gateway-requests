@@ -6,6 +6,7 @@ on:
       - "inbox/**/*.json"
       - "finalize_inbox.py"
       - "validate_requests.py"
+      - ".github/workflows/finalize-inbox.yml"
   workflow_dispatch:
 
 permissions:
@@ -48,4 +49,12 @@ jobs:
             exit 0
           fi
           git commit -m "gateway: finalize request drafts"
-          git push origin HEAD:main
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "push race detected; rebasing attempt=$attempt"
+            git pull --rebase origin main
+          done
+          echo "finalizer push retries exhausted"
+          exit 1
