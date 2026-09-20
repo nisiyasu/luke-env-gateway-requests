@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-09-20T00:31:30Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "573c13225471820d063043a37e3ee26fad389d63",
+    "target_source_commit_sha": "0d225f77944eb54eed648b76f00869879f4284ff"
+  },
+  "lane_id": "castle",
+  "lease_epoch": 0,
+  "operation_id": "cutover-castle-acquire-op-20260920-v1",
+  "operation_type": "LEASE_ACQUIRE",
+  "owner_run_id": "cutover-admin-canary-20260920-castle-v1",
+  "payload": {
+    "ttl_seconds": 600
+  },
+  "request_id": "cutover-castle-acquire-20260920-v1",
+  "request_sha256": "cd2c6936ca1dcdc1c214677a511eaf1499e6045412a588036247a65ed5c7e574",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
