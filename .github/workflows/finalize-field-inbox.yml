@@ -37,7 +37,10 @@ jobs:
           git config user.name "lq-canonical-field-request-finalizer"
           git config user.email "lq-canonical-field-request-finalizer@users.noreply.github.com"
           if [ -d field-requests ]; then
-            git add field-requests
+            git add -A field-requests
+          fi
+          if [ -d superseded ]; then
+            git add -A superseded
           fi
           if git diff --cached --quiet; then
             echo "No finalized field request changes."
