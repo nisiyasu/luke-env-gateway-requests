@@ -37,6 +37,9 @@ jobs:
           if [ -d evidence-requests ]; then
             git add evidence-requests
           fi
+          if [ -d rejected ]; then
+            git add rejected
+          fi
           if git diff --cached --quiet; then
             echo "No finalized request changes."
             exit 0
