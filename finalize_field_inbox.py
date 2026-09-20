@@ -101,6 +101,65 @@ def validate_request(path: pathlib.Path) -> list[str]:
     return errors
 
 
+LEASE_LIFECYCLE_OPS = {"LEASE_ACQUIRE", "LEASE_HEARTBEAT", "LEASE_RELEASE"}
+
+
+def _created_key(obj: dict, path: pathlib.Path) -> tuple[str, str]:
+    return (str(obj.get("created_at") or ""), path.name)
+
+
+def _archive_field_request(path: pathlib.Path) -> None:
+    rel = path.relative_to(ROOT)
+    dest = ROOT / "superseded" / rel
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    data = path.read_bytes()
+    if dest.exists():
+        if dest.read_bytes() != data:
+            raise ValueError(f"superseded collision: {dest}")
+    else:
+        dest.write_bytes(data)
+    path.unlink()
+    print(f"SUPERSEDED {rel} -> {dest.relative_to(ROOT)}")
+
+
+def supersede_old_field_lease_lifecycle() -> int:
+    entries = []
+    for path in sorted((ROOT / "field-requests").glob("*.json")):
+        try:
+            obj = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if obj.get("operation_type") in LEASE_LIFECYCLE_OPS:
+            entries.append((path, obj))
+
+    acquires = [(p, o) for p, o in entries if o.get("operation_type") == "LEASE_ACQUIRE"]
+    if not acquires:
+        return 0
+    latest_path, latest = max(acquires, key=lambda item: _created_key(item[1], item[0]))
+    latest_owner = latest.get("owner_run_id")
+    latest_created = str(latest.get("created_at") or "")
+    moved = 0
+    for path, obj in entries:
+        op = obj.get("operation_type")
+        owner = obj.get("owner_run_id")
+        created = str(obj.get("created_at") or "")
+        should_archive = False
+        if op == "LEASE_ACQUIRE" and path != latest_path:
+            should_archive = True
+        elif op == "LEASE_HEARTBEAT" and owner != latest_owner:
+            should_archive = True
+        elif (
+            op == "LEASE_RELEASE"
+            and owner != latest_owner
+            and created < latest_created
+        ):
+            should_archive = True
+        if should_archive:
+            _archive_field_request(path)
+            moved += 1
+    return moved
+
+
 def main() -> None:
     changed = 0
     for path in sorted(ROOT.glob("field-inbox/*.json")):
@@ -125,13 +184,15 @@ def main() -> None:
             changed += 1
             print(f"FINALIZED {path.name} -> {dest.name}")
 
+    superseded = supersede_old_field_lease_lifecycle()
+
     errors = []
     for path in sorted(ROOT.glob("field-requests/*.json")):
         errors.extend(validate_request(path))
     if errors:
         print("\n".join(errors))
         raise SystemExit(1)
-    print(f"FIELD_REQUESTS_VALID changed={changed}")
+    print(f"FIELD_REQUESTS_VALID changed={changed} superseded={superseded}")
 
 
 if __name__ == "__main__":
