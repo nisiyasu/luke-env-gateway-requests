@@ -24,6 +24,10 @@ def mutation_from_draft(draft: dict) -> dict:
         raise ValueError("invalid lane")
     if draft.get("operation_type") not in vr.ALLOWED_OPS:
         raise ValueError("operation_type not allowlisted")
+    payload = dict(draft.get("payload") or {})
+    if draft.get("operation_type") in {"LEASE_ACQUIRE", "LEASE_HEARTBEAT"}:
+        payload["ttl_seconds"] = 600
+
     out = {
         "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
         "request_id": draft.get("request_id"),
@@ -34,7 +38,7 @@ def mutation_from_draft(draft: dict) -> dict:
         "operation_type": draft.get("operation_type"),
         "expected_lane_head": draft.get("expected_lane_head"),
         "expected_target_identity": vr.TARGET_IDENTITIES[lane],
-        "payload": draft.get("payload") or {},
+        "payload": payload,
         "created_at": draft.get("created_at"),
         "request_sha256": "",
     }
