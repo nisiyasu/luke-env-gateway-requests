@@ -31,8 +31,8 @@ jobs:
 
           if [ -z "$TARGET_TOKEN" ]; then
             echo "TARGET_DISPATCH_TOKEN_AVAILABLE=false"
-            echo "Dispatch bridge is not armed yet; scheduled Target pollers remain fallback."
-            exit 0
+            echo "ERROR: Target dispatch bridge is NOT armed. Finalizer success does not imply Target execution."
+            exit 1
           fi
           echo "TARGET_DISPATCH_TOKEN_AVAILABLE=true"
 
