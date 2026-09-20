@@ -1,0 +1,78 @@
+name: Dispatch LUKE QUEST Target Pollers
+
+on:
+  workflow_run:
+    workflows:
+      - "Finalize LUKE QUEST Gateway Drafts"
+      - "Finalize LUKE QUEST Canonical Field Drafts"
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lq-target-poller-dispatch
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Dispatch target pollers after successful finalizer
+        env:
+          TARGET_TOKEN: ${{ secrets.LQ_TARGET_DISPATCH_TOKEN }}
+          SOURCE_WORKFLOW: ${{ github.event.workflow_run.name }}
+          SOURCE_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "$TARGET_TOKEN" ]; then
+            echo "TARGET_DISPATCH_TOKEN_AVAILABLE=false"
+            echo "Dispatch bridge is not armed yet; scheduled Target pollers remain fallback."
+            exit 0
+          fi
+          echo "TARGET_DISPATCH_TOKEN_AVAILABLE=true"
+
+          if [ "$EVENT_NAME" = "workflow_run" ] && [ "$SOURCE_CONCLUSION" != "success" ]; then
+            echo "Source finalizer did not succeed; no Target dispatch."
+            exit 0
+          fi
+
+          dispatch() {
+            workflow="$1"
+            code=$(curl -sS -o response.json -w "%{http_code}" \
+              -X POST \
+              -H "Authorization: Bearer $TARGET_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/nisiyasu/-luke-quest/actions/workflows/$workflow/dispatches" \
+              -d '{"ref":"main"}')
+            echo "$workflow HTTP_STATUS=$code"
+            if [ "$code" != "204" ]; then
+              cat response.json || true
+              return 1
+            fi
+          }
+
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            dispatch env-visual-gateway-request-poller.yml
+            dispatch canonical-field-gateway-request-poller.yml
+            dispatch environment-visual-evidence-production.yml
+            exit 0
+          fi
+
+          case "$SOURCE_WORKFLOW" in
+            "Finalize LUKE QUEST Gateway Drafts")
+              dispatch env-visual-gateway-request-poller.yml
+              dispatch environment-visual-evidence-production.yml
+              ;;
+            "Finalize LUKE QUEST Canonical Field Drafts")
+              dispatch canonical-field-gateway-request-poller.yml
+              ;;
+            *)
+              echo "Unknown source workflow; nothing to dispatch."
+              ;;
+          esac
