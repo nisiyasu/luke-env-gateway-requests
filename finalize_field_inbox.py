@@ -117,10 +117,10 @@ def _archive_field_request(path: pathlib.Path) -> None:
     dest = ROOT / "superseded" / rel
     dest.parent.mkdir(parents=True, exist_ok=True)
     data = path.read_bytes()
-    if dest.exists():
-        if dest.read_bytes() != data:
-            raise ValueError(f"superseded collision: {dest}")
-    else:
+    if dest.exists() and dest.read_bytes() != data:
+        digest = hashlib.sha256(data).hexdigest()[:12]
+        dest = dest.with_name(dest.stem + "." + digest + dest.suffix)
+    if not dest.exists():
         dest.write_bytes(data)
     path.unlink()
     print(f"SUPERSEDED {rel} -> {dest.relative_to(ROOT)}")
@@ -171,22 +171,24 @@ def main() -> None:
         if not REQUEST_ID_RE.fullmatch(request_id):
             raise ValueError(f"invalid request filename: {path}")
         draft = json.loads(path.read_text(encoding="utf-8"))
-        req = finalize(draft, request_id)
         dest = ROOT / "field-requests" / (request_id + ".json")
+        superseded_dest = ROOT / "superseded" / dest.relative_to(ROOT)
+        if superseded_dest.exists():
+            print(f"ALREADY_SUPERSEDED {superseded_dest.relative_to(ROOT)}")
+            continue
+        if dest.exists():
+            print(f"ALREADY_FINAL {dest.name}")
+            continue
+
+        req = finalize(draft, request_id)
         dest.parent.mkdir(parents=True, exist_ok=True)
         rendered = (
             json.dumps(req, ensure_ascii=False, indent=2, sort_keys=True)
             + "\n"
         )
-        if dest.exists():
-            if dest.read_text(encoding="utf-8") != rendered:
-                raise ValueError(
-                    f"append-only field request collision: {dest}"
-                )
-        else:
-            dest.write_text(rendered, encoding="utf-8")
-            changed += 1
-            print(f"FINALIZED {path.name} -> {dest.name}")
+        dest.write_text(rendered, encoding="utf-8")
+        changed += 1
+        print(f"FINALIZED {path.name} -> {dest.name}")
 
     superseded = supersede_old_field_lease_lifecycle()
 
