@@ -1,0 +1,45 @@
+name: Finalize LUKE QUEST Canonical Field Drafts
+
+on:
+  push:
+    paths:
+      - "field-inbox/**/*.json"
+      - "finalize_field_inbox.py"
+      - ".github/workflows/finalize-field-inbox.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lq-canonical-field-request-finalizer
+  cancel-in-progress: false
+
+jobs:
+  finalize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Finalize immutable field requests
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: python finalize_field_inbox.py
+
+      - name: Commit finalized field requests
+        run: |
+          git config user.name "lq-canonical-field-request-finalizer"
+          git config user.email "lq-canonical-field-request-finalizer@users.noreply.github.com"
+          git add field-requests
+          if git diff --cached --quiet; then
+            echo "No finalized field request changes."
+            exit 0
+          fi
+          git commit -m "gateway: finalize canonical field request drafts"
+          git push origin HEAD:main

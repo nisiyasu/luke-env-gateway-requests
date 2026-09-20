@@ -149,3 +149,38 @@ Scheduled Agentはterminal receiptをfresh確認してから次operationへ進�
 - Visual PASSには `visual_comparison_performed=true` が必須
 - Durable Evidence保存とfresh read-back完了前にPASS / close / Parent advanceしない
 - Target Repositoryへのdirect write権限をScheduled Agentへ戻さない
+
+
+## Canonical Field / 草原本線の要求経路
+
+草原・王都近郊フィールドのcanonical Build LoopはEnvironment Laneと別の専用経路を使う。
+
+Agentが書く場所:
+
+`field-inbox/<request_id>.json`
+
+Draft schema:
+
+`LUKE_QUEST_CANONICAL_FIELD_GATEWAY_REQUEST_DRAFT:v1`
+
+Request Repository自身の
+`Finalize LUKE QUEST Canonical Field Drafts`
+が固定Program identityとSHA256を付与して、
+
+`field-requests/<request_id>.json`
+
+へappend-only確定する。
+
+Target Repository側は
+`LUKE QUEST Canonical Field Gateway Request Poller`
+だけが読む。
+
+安全境界:
+- implementation branchは `prototype/modern-3d` 固定
+- Parentは #12 固定
+- router commentは `5646492352` 固定
+- Issue mutationはfresh routerの `CURRENT_PACKET_ISSUE` だけ
+- router更新はfresh router body hash一致が必須
+- PASS_ADVANCEではCurrent Packetがclosed済みであることをGatewayがfresh確認
+- Target RepositoryへのScheduled Agent direct writeは引き続き禁止
+- Environment Village / Castle / DungeonのLeaseやrouterへ触れない
