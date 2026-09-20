@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-09-20T01:42:20Z",
+  "expected_lane_head": "90635ceff9d35d69f80da350df1e6ea0610657dd",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "field",
+  "lease_epoch": 2,
+  "operation_id": "cutover-field-implementation-write-op-20260920-v1",
+  "operation_type": "IMPLEMENTATION_FILE_UPDATE",
+  "owner_run_id": "cutover-field-write-canary-20260920-v2",
+  "payload": {
+    "content": "LUKE QUEST CANONICAL FIELD GATEWAY IMPLEMENTATION WRITE CANARY v1\npurpose=prove fenced Scheduled-Agent transport can write prototype/modern-3d without direct connector write\nlane=field\nparent_issue=12\nrouter_comment_id=5646492352\nowner_run_id=cutover-field-write-canary-20260920-v2\nlease_epoch=2\nexpected_pre_head=90635ceff9d35d69f80da350df1e6ea0610657dd\ngameplay_code_changed=false\n",
+    "encoding": "utf-8",
+    "path": "docs/autonomy/evidence/CANONICAL_FIELD_GATEWAY_IMPLEMENTATION_WRITE_CANARY_v1.txt"
+  },
+  "request_id": "cutover-field-implementation-write-20260920-v1",
+  "request_sha256": "a275f6a67ecc02628836aa644edb53807810da08ae15ada84a9ef648a14a681c",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
