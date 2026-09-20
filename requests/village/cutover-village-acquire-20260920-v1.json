@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-09-20T00:29:04.4276220Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "e6536371eddcc7fb5cf5803568216f008011a5f1",
+    "target_source_commit_sha": "0d225f77944eb54eed648b76f00869879f4284ff"
+  },
+  "lane_id": "village",
+  "lease_epoch": 0,
+  "operation_id": "cutover-village-acquire-op-20260920-v1",
+  "operation_type": "LEASE_ACQUIRE",
+  "owner_run_id": "cutover-admin-canary-20260920-v1",
+  "payload": {
+    "ttl_seconds": 600
+  },
+  "request_id": "cutover-village-acquire-20260920-v1",
+  "request_sha256": "c2ccf39a6bf8c6cceebfd3e93bf8a209189f153e9da53616a4ae0eeaa87ffffd",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
