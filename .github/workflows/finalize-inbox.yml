@@ -8,6 +8,8 @@ on:
       - "validate_requests.py"
       - ".github/workflows/finalize-inbox.yml"
   workflow_dispatch:
+  schedule:
+    - cron: "2,12,22,32,42,52 * * * *"
 
 permissions:
   contents: write
