@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-09-20T00:55:00Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "573c13225471820d063043a37e3ee26fad389d63",
+    "target_source_commit_sha": "0d225f77944eb54eed648b76f00869879f4284ff"
+  },
+  "lane_id": "castle",
+  "lease_epoch": 0,
+  "operation_id": "op-001-lease-acquire",
+  "operation_type": "LEASE_ACQUIRE",
+  "owner_run_id": "castle-20260920-run02",
+  "payload": {
+    "ttl_seconds": 1800
+  },
+  "request_id": "castle-20260920-run02-lease",
+  "request_sha256": "28905880c77f7e19f7d51a91f723d1fb01a1a77047555efc2c489f6a56e22c77",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}

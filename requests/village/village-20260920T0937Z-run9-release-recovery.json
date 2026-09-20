@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-09-20T11:25:00Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "e6536371eddcc7fb5cf5803568216f008011a5f1",
+    "target_source_commit_sha": "0d225f77944eb54eed648b76f00869879f4284ff"
+  },
+  "lane_id": "village",
+  "lease_epoch": 4,
+  "operation_id": "village-20260920T0937Z-run9-release-recovery-op",
+  "operation_type": "LEASE_RELEASE",
+  "owner_run_id": "village-20260920T0937Z-run9",
+  "payload": {},
+  "request_id": "village-20260920T0937Z-run9-release-recovery",
+  "request_sha256": "eb9996497b4be62c558b58a8d9efe5d35cda1e79c4239858a86af9b8465f1369",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
