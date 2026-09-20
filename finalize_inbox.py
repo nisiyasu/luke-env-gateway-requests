@@ -33,7 +33,7 @@ def mutation_from_draft(draft: dict) -> dict:
         "operation_id": draft.get("operation_id"),
         "operation_type": draft.get("operation_type"),
         "expected_lane_head": draft.get("expected_lane_head"),
-        "expected_target_identity": draft.get("expected_target_identity"),
+        "expected_target_identity": vr.TARGET_IDENTITIES[lane],
         "payload": draft.get("payload") or {},
         "created_at": draft.get("created_at"),
         "request_sha256": "",
