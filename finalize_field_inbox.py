@@ -57,6 +57,10 @@ def finalize(draft: dict, request_id: str) -> dict:
     epoch = draft.get("lease_epoch")
     if not isinstance(epoch, int) or epoch < 0:
         raise ValueError("lease_epoch must be non-negative int")
+    payload = dict(draft.get("payload") or {})
+    if op in {"LEASE_ACQUIRE", "LEASE_HEARTBEAT"}:
+        payload["ttl_seconds"] = 600
+
     req = {
         "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
         "request_id": request_id,
@@ -67,7 +71,7 @@ def finalize(draft: dict, request_id: str) -> dict:
         "operation_type": op,
         "expected_lane_head": draft.get("expected_lane_head"),
         "expected_target_identity": TARGET_IDENTITY,
-        "payload": draft.get("payload") or {},
+        "payload": payload,
         "created_at": draft.get("created_at"),
         "request_sha256": "",
     }
