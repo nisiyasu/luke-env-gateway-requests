@@ -1,0 +1,40 @@
+name: Finalize LUKE QUEST Gateway Drafts
+
+on:
+  push:
+    paths:
+      - "inbox/**/*.json"
+      - "finalize_inbox.py"
+      - "validate_requests.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lq-env-request-finalizer
+  cancel-in-progress: false
+
+jobs:
+  finalize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Finalize immutable requests
+        run: python finalize_inbox.py
+      - name: Commit finalized requests
+        run: |
+          git config user.name "lq-env-request-finalizer"
+          git config user.email "lq-env-request-finalizer@users.noreply.github.com"
+          git add requests evidence-requests
+          if git diff --cached --quiet; then
+            echo "No finalized request changes."
+            exit 0
+          fi
+          git commit -m "gateway: finalize request drafts"
+          git push origin HEAD:main
