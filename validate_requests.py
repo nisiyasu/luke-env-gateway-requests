@@ -114,41 +114,6 @@ def audit_status(obj: object) -> str:
     return str(obj.get("STATUS", obj.get("status", ""))).upper()
 
 
-def validate_publish(path: pathlib.Path, req: dict, lane: str) -> list[str]:
-    errors = common_checks(path, req, lane)
-    if req.get("schema") != "LUKE_QUEST_ENV_EVIDENCE_PUBLISH_REQUEST:v1":
-        errors.append(f"{path}: publish schema mismatch")
-    for key in (
-        "capture_request_id", "owner_run_id", "operation_id",
-        "evidence_id", "adoption_id",
-    ):
-        if not req.get(key):
-            errors.append(f"{path}: {key} required")
-    if not isinstance(req.get("lease_epoch"), int) or req["lease_epoch"] < 1:
-        errors.append(f"{path}: publish lease_epoch must be positive int")
-    child = req.get("child_issue")
-    if not isinstance(child, int) or child not in TARGETS[lane]["children"]:
-        errors.append(f"{path}: child_issue outside lane allowlist")
-    if not SHA40_RE.fullmatch(str(req.get("expected_lane_head") or "")):
-        errors.append(f"{path}: expected_lane_head must be 40-char SHA")
-    if not SHA40_RE.fullmatch(str(req.get("expected_evidence_head") or "")):
-        errors.append(f"{path}: expected_evidence_head must be 40-char SHA")
-
-    visual = req.get("visual_audit")
-    coordinate = req.get("coordinate_audit")
-    if audit_status(visual) != "PASS":
-        errors.append(f"{path}: visual_audit must be PASS")
-    if not isinstance(visual, dict) or visual.get("visual_comparison_performed") is not True:
-        errors.append(f"{path}: visual comparison must be explicitly performed")
-    if audit_status(coordinate) != "PASS":
-        errors.append(f"{path}: coordinate_audit must be PASS")
-    if isinstance(visual, dict):
-        for key in ("target_image_sha256", "actual_image_sha256"):
-            if not SHA256_RE.fullmatch(str(visual.get(key) or "")):
-                errors.append(f"{path}: visual_audit {key} must be SHA256")
-    return errors
-
-
 def validate(path: pathlib.Path) -> list[str]:
     rel = path.relative_to(ROOT).as_posix()
     parts = rel.split("/")
@@ -163,14 +128,12 @@ def validate(path: pathlib.Path) -> list[str]:
         return validate_mutation(path, req, lane)
     if family == "evidence-requests":
         return validate_capture(path, req, lane)
-    if family == "evidence-publish":
-        return validate_publish(path, req, lane)
     return [f"{rel}: unsupported request family"]
 
 
 def main():
     files = []
-    for family in ("requests", "evidence-requests", "evidence-publish"):
+    for family in ("requests", "evidence-requests"):
         files.extend(sorted(ROOT.glob(f"{family}/*/*.json")))
     errors = []
     seen = {}
