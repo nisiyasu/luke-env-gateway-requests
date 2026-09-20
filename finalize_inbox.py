@@ -93,10 +93,10 @@ def _archive_request(path: pathlib.Path) -> None:
     dest = ROOT / "superseded" / rel
     dest.parent.mkdir(parents=True, exist_ok=True)
     data = path.read_bytes()
-    if dest.exists():
-        if dest.read_bytes() != data:
-            raise ValueError(f"superseded collision: {dest}")
-    else:
+    if dest.exists() and dest.read_bytes() != data:
+        digest = hashlib.sha256(data).hexdigest()[:12]
+        dest = dest.with_name(dest.stem + "." + digest + dest.suffix)
+    if not dest.exists():
         dest.write_bytes(data)
     path.unlink()
     print(f"SUPERSEDED {rel} -> {dest.relative_to(ROOT)}")
@@ -158,22 +158,29 @@ def main() -> None:
 
             schema = draft.get("schema")
             if schema == "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1":
-                obj = mutation_from_draft(draft)
                 dest = ROOT / "requests" / lane / (request_id + ".json")
+                builder = mutation_from_draft
             elif schema == "LUKE_QUEST_ENV_EVIDENCE_CAPTURE_REQUEST_DRAFT:v1":
-                obj = capture_from_draft(draft)
                 dest = ROOT / "evidence-requests" / lane / (request_id + ".json")
+                builder = capture_from_draft
             else:
                 raise ValueError(f"unsupported draft schema: {schema}")
 
+            superseded_dest = ROOT / "superseded" / dest.relative_to(ROOT)
+            if superseded_dest.exists():
+                print(f"ALREADY_SUPERSEDED {superseded_dest.relative_to(ROOT)}")
+                continue
+            if dest.exists():
+                print(f"ALREADY_FINAL {dest.relative_to(ROOT)}")
+                continue
+
+            obj = builder(draft)
             if write_once(dest, obj):
                 changed += 1
                 print(
                     f"FINALIZED {path.relative_to(ROOT)} -> "
                     f"{dest.relative_to(ROOT)}"
                 )
-            else:
-                print(f"ALREADY_FINAL {dest.relative_to(ROOT)}")
         except Exception as exc:
             rejected += 1
             safe_id = path.stem
