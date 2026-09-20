@@ -4,6 +4,7 @@ import hashlib
 import json
 import pathlib
 import re
+from datetime import datetime, timezone
 
 ROOT = pathlib.Path(__file__).resolve().parent
 TARGET_IDENTITY = {
@@ -106,6 +107,13 @@ def validate_request(path: pathlib.Path) -> list[str]:
 
 
 LEASE_LIFECYCLE_OPS = {"LEASE_ACQUIRE", "LEASE_HEARTBEAT", "LEASE_RELEASE"}
+MAX_ACQUIRE_AGE_SECONDS = 900
+
+
+def _parse_time(value: str | None) -> float | None:
+    if not value:
+        return None
+    return datetime.fromisoformat(value.replace("Z", "+00:00")).timestamp()
 
 
 def _created_key(obj: dict, path: pathlib.Path) -> tuple[str, str]:
@@ -142,13 +150,18 @@ def supersede_old_field_lease_lifecycle() -> int:
     latest_path, latest = max(acquires, key=lambda item: _created_key(item[1], item[0]))
     latest_owner = latest.get("owner_run_id")
     latest_created = str(latest.get("created_at") or "")
+    latest_ts = _parse_time(latest_created)
+    latest_stale = (
+        latest_ts is not None
+        and datetime.now(timezone.utc).timestamp() - latest_ts > MAX_ACQUIRE_AGE_SECONDS
+    )
     moved = 0
     for path, obj in entries:
         op = obj.get("operation_type")
         owner = obj.get("owner_run_id")
         created = str(obj.get("created_at") or "")
         should_archive = False
-        if op == "LEASE_ACQUIRE" and path != latest_path:
+        if op == "LEASE_ACQUIRE" and (path != latest_path or latest_stale):
             should_archive = True
         elif op == "LEASE_HEARTBEAT" and owner != latest_owner:
             should_archive = True
