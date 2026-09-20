@@ -131,11 +131,7 @@ def supersede_old_lease_lifecycle() -> int:
                 should_archive = True
             elif op == "LEASE_HEARTBEAT" and owner != latest_owner:
                 should_archive = True
-            elif (
-                op == "LEASE_RELEASE"
-                and owner != latest_owner
-                and created < latest_created
-            ):
+            elif op == "LEASE_RELEASE" and owner != latest_owner:
                 should_archive = True
             if should_archive:
                 _archive_request(path)
