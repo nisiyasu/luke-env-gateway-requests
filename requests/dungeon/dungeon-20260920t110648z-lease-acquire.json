@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-09-20T11:06:48Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "198d0f5f3da115b70218ae8180d5f8363d744959",
+    "target_source_commit_sha": "0d225f77944eb54eed648b76f00869879f4284ff"
+  },
+  "lane_id": "dungeon",
+  "lease_epoch": 0,
+  "operation_id": "op-lease-acquire-20260920t110648z",
+  "operation_type": "LEASE_ACQUIRE",
+  "owner_run_id": "RUN-20260920T110648Z-8F3C6D91A4B2",
+  "payload": {
+    "ttl_seconds": 1800
+  },
+  "request_id": "dungeon-20260920t110648z-lease-acquire",
+  "request_sha256": "b7f1a2c37c439a41ae2815d49270aab913b08527bcad1d142e6d2b9e50694186",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
