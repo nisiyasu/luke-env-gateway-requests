@@ -21,6 +21,11 @@ TARGETS = {
         "target_blob_sha": "198d0f5f3da115b70218ae8180d5f8363d744959",
         "children": set(range(82, 96)),
     },
+    "visual-rebuild": {
+        "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd",
+        "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+        "children": set(range(102, 117)),
+    },
 }
 TARGET_IDENTITIES = {
     lane: {
