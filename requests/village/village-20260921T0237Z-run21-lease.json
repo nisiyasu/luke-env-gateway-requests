@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-09-21T02:37:25Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "e6536371eddcc7fb5cf5803568216f008011a5f1",
+    "target_source_commit_sha": "0d225f77944eb54eed648b76f00869879f4284ff"
+  },
+  "lane_id": "village",
+  "lease_epoch": 0,
+  "operation_id": "village-20260921T0237Z-run21-op-lease-acquire",
+  "operation_type": "LEASE_ACQUIRE",
+  "owner_run_id": "village-20260921T0237Z-run21",
+  "payload": {
+    "ttl_seconds": 600
+  },
+  "request_id": "village-20260921T0237Z-run21-lease",
+  "request_sha256": "d2eff1d04d5df441d9490626db2eef3f410bc16f8bc0c5f25a2522376f2558a6",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
