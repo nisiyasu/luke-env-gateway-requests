@@ -1,0 +1,10 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-c-20260921T220722Z-run14-lease",
+  "lane_id": "visual-rebuild",
+  "operation": "LEASE_ACQUIRE",
+  "owner_run_id": "worker-c-20260921T220722Z-run14",
+  "payload": {
+    "ttl_seconds": 600
+  }
+}
