@@ -1,0 +1,18 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "dungeon-20260921t110836z-lease-acquire",
+  "lane_id": "dungeon",
+  "owner_run_id": "dungeon-20260921t110836z",
+  "lease_epoch": 0,
+  "operation_id": "dungeon-20260921t110836z-lease-acquire-op",
+  "operation_type": "LEASE_ACQUIRE",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_source_commit_sha": "0d225f77944eb54eed648b76f00869879f4284ff",
+    "target_blob_sha": "198d0f5f3da115b70218ae8180d5f8363d744959"
+  },
+  "payload": {
+    "ttl_seconds": 600
+  },
+  "created_at": "2026-09-21T11:08:36Z"
+}
