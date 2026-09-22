@@ -1,0 +1,64 @@
+{
+  "schema": "LQ_ISSUE_102_PLANNING_DURABILITY_AUDIT:v1",
+  "target_repository": "nisiyasu/-luke-quest",
+  "issue": 102,
+  "feature_ref": "spec/target-image-to-threejs-20260921",
+  "evidence": {
+    "owner_requirements": {
+      "path": "specs/001-target-image-threejs/source/OWNER_REQUIREMENTS_v1.0.md",
+      "current_blob_sha": "2d1db9c2db0e7b391b297ae374f9d8d2613cfc8e",
+      "only_history_commit": "88694c2812c18938c8d72db3c5933b3efba2e428",
+      "modified_after_initial_save": false
+    },
+    "traceability": {
+      "path": "specs/001-target-image-threejs/traceability.md",
+      "owner_sections_expected": 82,
+      "owner_sections_traced": 82,
+      "unique_sections": 82,
+      "missing_sections": []
+    },
+    "analyze": {
+      "path": "specs/001-target-image-threejs/analyze.md",
+      "critical_tokens": 0,
+      "high_tokens": 0,
+      "medium_tokens": 0,
+      "status_text": "条件付きPASS",
+      "downstream_prerequisites_owned_by_tasks": {
+        "archive_rollback": [
+          "T006",
+          "T012"
+        ],
+        "landmark_roi": [
+          "T015",
+          "T016"
+        ],
+        "reuse_inventory": [
+          "T008",
+          "T009",
+          "T010"
+        ],
+        "iphone_profile": [
+          "T080",
+          "T081"
+        ]
+      }
+    },
+    "pipeline": {
+      "path": "specs/001-target-image-threejs/DEVELOPMENT_PIPELINE_v1.md",
+      "exists": true,
+      "numbered_steps": 38,
+      "stale_execution_boundary_detected": true,
+      "stale_boundary_note": "旧Step22停止文はOwner promotion後の現在地と不一致。正本更新対象だが、T004の工程正本存在自体は成立。"
+    }
+  },
+  "acceptance": {
+    "owner_original_durable_saved": "PASS",
+    "development_pipeline_exists": "PASS",
+    "analyze_unresolved_critical_high_medium_zero": "PASS",
+    "requirement_coverage_100_percent": "PASS"
+  },
+  "close_gate": {
+    "status": "HOLD_FOR_NATIVE_DEPENDENCY_REPAIR",
+    "reason": "#102 close前に #113<-#102, #114<-#113, #103<-#114 へNative dependencyを修復し、#103の早発進を防止する"
+  }
+}
