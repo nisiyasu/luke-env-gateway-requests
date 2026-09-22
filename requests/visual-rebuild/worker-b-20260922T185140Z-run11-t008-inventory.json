@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-09-22T18:53:00Z",
+  "expected_lane_head": "41c157c9d7603f30bcc597069af474508915d447",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 22,
+  "operation_id": "worker-b-20260922T185140Z-run11-t008-inventory-op",
+  "operation_type": "IMPLEMENTATION_FILE_UPDATE",
+  "owner_run_id": "worker-b-20260922T185140Z-run11",
+  "payload": {
+    "content": "# T008 ReuseInventory / 再利用棚卸し v1\n\nTASK: T008\nISSUE: #121\nSOURCE_BRANCH: experiment/target-image-threejs-v1\nSOURCE_HEAD: 41c157c9d7603f30bcc597069af474508915d447\nPURPOSE: 旧視覚sceneを、#101新視覚再構築で再利用可能な共通runtimeとscene固有patchへ分離するためのFresh棚卸し。旧sceneを継ぎ足し改修する許可ではない。\n\n## 再利用候補: 共通runtime\n- `index.html` のアプリ起動枠、iPhone viewport/safe-area対応、入力UIの基礎。\n- player/NPCの状態管理、移動入力、衝突判定、マップ遷移、会話、戦闘接続など、scene固有座標・見た目から切り離せるゲーム進行ロジック。\n- `addons/accessory-equipment.js`, `addons/accessory-shop-sell.js`, `addons/advanced-equipment.js`, `addons/adventure-journal.js`, `addons/adventure-records.js` 等のゲーム機能系addon。視覚scene依存がないことをT009/T010で個別検証してから採用する。\n- `assets/`, `dist/` は資産/runtime候補ディレクトリとして存在するが、内容単位の独立性はT009/T010で検証する。\n\n## scene固有patch: 新sceneへ持ち込まない\n- `index.html` の `MAPS` タイル配列、旧2D tile class、固定48pxタイル、旧map座標、旧NPC配置、旧背景/地形表現。\n- `addons/aldia-castle-gatehouse.js`, `aldia-civilian-home.js`, `aldia-highland-trail.js`, `aldia-landmarks.js`, `aldia-lighting-polish.js`, `aldia-north-temple.js`, `aldia-visual-density.js` など、Aldia固有の場所・landmark・lighting・visual-density patch。\n- 旧sceneのlayout/offset/camera/lighting/densityを新Targetの構図正本として流用しない。\n\n## 条件付き再利用\n- HUD、dialog、controlsなどUIはゲーム機能として再利用候補だが、Target構図を侵食しない形へ分離して検証する。\n- player/NPC表現はロジックと見た目を分離し、旧emoji/tile visualは再利用しない。\n- Aldia addon内に共通化可能な関数があっても、ファイル単位で持ち込まず、T009/T010でscene非依存性を証明したものだけ抽出候補とする。\n\n## 次工程境界\n- T009: player/movement/input/traversal共通基盤の独立性を検証。\n- T010: asset loader/runtime bootstrap/diagnosticsの独立性を検証。\n- T011: 本棚卸しを根拠に旧scene layout/offset/visual patchを新branchから切離す。\n\n## Evidence\n- tasks.md T008: `旧視覚sceneのReuseInventoryを作成する`。\n- implementation branch HEAD: `41c157c9d7603f30bcc597069af474508915d447`。\n- Fresh inspected: repository root, `index.html`, `addons/` listing.\n- Safety: #12 / WORK_PACKET_ROUTER:v1 / #26-#50 / prototype/modern-3d / Canonical Field Gateway は変更していない。\n",
+    "encoding": "utf-8",
+    "path": "docs/autonomy/evidence/T008_REUSE_INVENTORY_v1.md"
+  },
+  "request_id": "worker-b-20260922T185140Z-run11-t008-inventory",
+  "request_sha256": "87daf6147e4ba3f217288a3e16d7582722e8db01e1435afd0ac949247b7c45a9",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
