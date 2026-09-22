@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-09-22T23:38:08Z",
+  "expected_lane_head": "327f2edd138a9db24719160a06cefc242da99d79",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 26,
+  "operation_id": "control-t011-20260922T233515Z-clean-index-op",
+  "operation_type": "IMPLEMENTATION_FILE_UPDATE",
+  "owner_run_id": "control-t011-20260922T233515Z",
+  "payload": {
+    "content": "<!doctype html>\n<html lang=\"ja\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\">\n  <title>LUKE QUEST Target Image Rebuild</title>\n</head>\n<body>\n  <main id=\"lq-target-image-root\" data-boundary=\"t011-clean-room\">\n    <p>LUKE QUEST target-image rebuild runtime boundary.</p>\n  </main>\n  <script type=\"module\" src=\"./bootstrap.js\"></script>\n</body>\n</html>",
+    "encoding": "utf-8",
+    "path": "prototypes/target-image-threejs/index.html"
+  },
+  "request_id": "control-t011-20260922T233515Z-clean-index",
+  "request_sha256": "285ed433f089eb8218f6f38b70f381b6c4c0fc9dd6309bca49fbbe98cc7945e8",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
