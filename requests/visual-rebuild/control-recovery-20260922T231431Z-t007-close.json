@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-09-22T23:18:26Z",
+  "expected_lane_head": "a75d62a627a80797654cd02670ee3db807eff116",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 24,
+  "operation_id": "control-recovery-20260922T231431Z-t007-close-op",
+  "operation_type": "ISSUE_CLOSE",
+  "owner_run_id": "control-recovery-20260922T231431Z",
+  "payload": {
+    "completion_evidence": [
+      "archive_sha=540e33b2c98d06d6140c9a768abef03954d46ca8",
+      "implementation_head=a75d62a627a80797654cd02670ee3db807eff116",
+      "merge_base=540e33b2c98d06d6140c9a768abef03954d46ca8",
+      "ahead_by=2"
+    ],
+    "completion_mode": "TASK_EVIDENCE",
+    "issue_number": 120,
+    "task_id": "T007",
+    "work_log_comment_id": 5785914557
+  },
+  "request_id": "control-recovery-20260922T231431Z-t007-close",
+  "request_sha256": "88627c5d878bf9b48ad71f6cdeeb4c9e71ad9b5e38e5afa43bacd0f11907cd7d",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
