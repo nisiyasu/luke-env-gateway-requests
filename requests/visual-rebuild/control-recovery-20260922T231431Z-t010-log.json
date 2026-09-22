@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-09-22T23:20:59Z",
+  "expected_lane_head": "a75d62a627a80797654cd02670ee3db807eff116",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 24,
+  "operation_id": "control-recovery-20260922T231431Z-t010-log-op",
+  "operation_type": "ISSUE_COMMENT",
+  "owner_run_id": "control-recovery-20260922T231431Z",
+  "payload": {
+    "body": "T010 WORK LOG / asset loader-runtime bootstrap-diagnostics independence audit\nTASK_ID=T010\nCONTROL_RUN_ID=control-recovery-20260922T231431Z\nBRANCH=experiment/target-image-threejs-v1\nCOMMIT_SHA=a75d62a627a80797654cd02670ee3db807eff116\nRESULT=NOT_YET_INDEPENDENT\nEVIDENCE=Fresh exact-head source audit. addons/runtime-smoke-hook.js directly reads legacy runtime globals s, MAPS, shell/player and performs old map/building/battle/save probes. Existing runtime bootstrap/diagnostics are therefore coupled to the legacy scene/runtime state. Repository workflows and packaging provide useful reusable diagnostics concepts, but no scene-agnostic asset-loader/runtime-bootstrap/diagnostics boundary is yet established for the new target-image implementation.\nTEST=Exact-head file inventory + source grep for loader/runtime/diagnostic/bootstrap/THREE dependencies.\nTASK_RESULT=PASS_AUDIT_COMPLETED_WITH_NEGATIVE_FINDING\nNEXT=T011 may use this negative audit together with T008/T009 evidence to separate old scene-specific layout/offset/visual patch from reusable runtime concepts.",
+    "issue_number": 123
+  },
+  "request_id": "control-recovery-20260922T231431Z-t010-log",
+  "request_sha256": "104a4d38aed74c5f87643704d57df8e9f460f6c3585bcc67d8782fb86340ce50",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
