@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-09-22T23:23:34Z",
+  "expected_lane_head": "a75d62a627a80797654cd02670ee3db807eff116",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 24,
+  "operation_id": "control-recovery-20260922T231431Z-t009-close2-op",
+  "operation_type": "ISSUE_CLOSE",
+  "owner_run_id": "control-recovery-20260922T231431Z",
+  "payload": {
+    "completion_evidence": [
+      "audit_result=NOT_YET_INDEPENDENT",
+      "audit_task_completed=true",
+      "audited_head=41c157c9d7603f30bcc597069af474508915d447",
+      "finding=movement collision traversal coupled to MAPS and old scene state"
+    ],
+    "completion_mode": "TASK_EVIDENCE",
+    "issue_number": 122,
+    "task_id": "T009",
+    "work_log_comment_id": 5785983387
+  },
+  "request_id": "control-recovery-20260922T231431Z-t009-close2",
+  "request_sha256": "ee7ed38d3c1b9e05ee3961e072210d5cbde4414a3cee7033dc63b794e43175c3",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
