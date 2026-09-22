@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-09-22T17:05:19.4002271Z",
+  "expected_lane_head": "41c157c9d7603f30bcc597069af474508915d447",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 19,
+  "operation_id": "worker-c-20260922T165851Z-run19-claim-118-recovery-op",
+  "operation_type": "ISSUE_COMMENT",
+  "owner_run_id": "worker-c-20260922T165851Z-run19",
+  "payload": {
+    "body": "LQ_WORKER_CLAIM:v1\r\nWORKER_ID=C\r\nOWNER_RUN_ID=worker-c-20260922T165851Z-run19\r\nCLAIMED_AT=2026-09-22T17:05:19.4002271Z\r\nCLAIM_UNTIL=2026-09-22T19:05:19.4002271Z\r\nISSUE=118",
+    "issue_number": 118
+  },
+  "request_id": "worker-c-20260922T165851Z-run19-claim-118-recovery",
+  "request_sha256": "c144f69d878a426a54096b8090e8f3425781bdc4369deac69cf86d079c81f905",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
