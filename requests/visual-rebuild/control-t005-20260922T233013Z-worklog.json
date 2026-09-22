@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-09-22T23:31:35Z",
+  "expected_lane_head": "a75d62a627a80797654cd02670ee3db807eff116",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 25,
+  "operation_id": "control-t005-20260922T233013Z-worklog-op",
+  "operation_type": "ISSUE_COMMENT",
+  "owner_run_id": "control-t005-20260922T233013Z",
+  "payload": {
+    "body": "T005 WORK LOG / fresh HEAD dirty and parallel-state inventory\nTASK_ID=T005\nCONTROL_RUN_ID=control-t005-20260922T233013Z\nREMOTE_PROTOTYPE_BRANCH=prototype/modern-3d\nREMOTE_PROTOTYPE_HEAD=01b1ff506f10d3d32cfe0823a5ab1293376e9f50\nREMOTE_PROTOTYPE_LATEST_COMMIT=gateway: autonomous-m02p01-capture-repair-20260922T182300Z-v1\n\nLOCAL_CANONICAL=C:\\LUKE_quest\\-luke-quest\nLOCAL_CANONICAL_BRANCH=main\nLOCAL_CANONICAL_HEAD=17e66120c3fff30135835c628719ec7c8ecfb041\nLOCAL_CANONICAL_DIRTY_COUNT=0\n\nVISUAL_REBUILD_WORKTREE_COMMON=C:\\luke-gateway-cutover\\.git\nVISUAL_REBUILD_MAIN=C:\\luke-gateway-cutover | branch=main | head=a466c00604d845937f9e182b4c3c7011c238ccaa | dirty=0\nVISUAL_REBUILD_CONTROL=C:\\luke-visual-control | branch=control/lease-visual-rebuild | head=d1ddfe0a13a0b25459717abccf87f1339e7d5ae0 | dirty=0\nVISUAL_REBUILD_SPEC=C:\\luke-visual-speckit | branch=spec/target-image-to-threejs-20260921 | head=a63fd821c3bcd8038052e8d709fcf2b5ecff67c7 | dirty=0\nVISUAL_REBUILD_MEMORY=C:\\luke-graphiti-memory | branch=memory/luke-visual-rebuild-graphiti | head=f9f602446db93f745d961f68669264964a834f65 | dirty=0\n\nPARALLEL_OTHER_WORK_DETECTED=true\nPARALLEL_OTHER_DIRTY_EXAMPLES=C:\\luke-gold dirty=70; C:\\luke-main dirty=5; C:\\luke-main-baseline dirty=2; C:\\luke-pull-speckit dirty=7; C:\\luke-preview-config dirty=2\nPARALLEL_SAFETY_FINDING=Dirty parallel work exists in separate clones/worktrees. The dedicated visual-rebuild control/spec/memory worktrees are clean. No local prototype/modern-3d worktree is registered under C:\\luke-gateway-cutover, and experiment/target-image-threejs-v1 is not checked out in that common worktree set.\nIMPLEMENTATION_REMOTE_HEAD=a75d62a627a80797654cd02670ee3db807eff116\nRESULT=PASS\nACCEPTANCE=Fresh remote HEAD plus local dirty/parallel state recorded without mutating old field line or unrelated dirty work.",
+    "issue_number": 118
+  },
+  "request_id": "control-t005-20260922T233013Z-worklog",
+  "request_sha256": "479df616de6b54f0d6352aad55d2b551f96f24592c62e2549d87f1c46848c27b",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
