@@ -1,0 +1,6 @@
+{
+  "error": "unsupported draft schema: LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
+  "error_type": "ValueError",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_DRAFT_REJECTION:v1",
+  "source_path": "inbox/visual-rebuild/control-recovery-20260922T231131Z-lease.json"
+}
