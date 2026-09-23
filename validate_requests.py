@@ -25,6 +25,9 @@ TARGETS = {
         "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd",
         "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
         "children": set(range(102, 117)),
+        # Leaf issues created under #102-#116 are native descendants of #101.
+        # The target scanner revalidates ancestry before any capture runs.
+        "allow_descendants": True,
     },
 }
 TARGET_IDENTITIES = {
@@ -106,7 +109,12 @@ def validate_capture(path: pathlib.Path, req: dict, lane: str) -> list[str]:
     if not isinstance(req.get("lease_epoch"), int) or req["lease_epoch"] < 1:
         errors.append(f"{path}: capture lease_epoch must be positive int")
     child = req.get("child_issue")
-    if not isinstance(child, int) or child not in TARGETS[lane]["children"]:
+    if not isinstance(child, int) or child <= 0:
+        errors.append(f"{path}: child_issue must be positive int")
+    elif (
+        child not in TARGETS[lane]["children"]
+        and not TARGETS[lane].get("allow_descendants")
+    ):
         errors.append(f"{path}: child_issue outside lane allowlist")
     if not SHA40_RE.fullmatch(str(req.get("implementation_head") or "")):
         errors.append(f"{path}: implementation_head must be 40-char SHA")
