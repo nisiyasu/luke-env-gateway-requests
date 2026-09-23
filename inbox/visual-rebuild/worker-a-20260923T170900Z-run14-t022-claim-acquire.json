@@ -1,0 +1,19 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-a-20260923T170900Z-run14-t022-claim-acquire",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "worker-a-20260923T170900Z-run14-t022",
+  "lease_epoch": 0,
+  "operation_id": "worker-a-20260923T170900Z-run14-t022-claim-acquire-op",
+  "operation_type": "WORK_CLAIM_ACQUIRE",
+  "expected_lane_head": "1ebc099a29de55ee760f0aa6c2ced306f218d994",
+  "payload": {
+    "issue_number": 136,
+    "task_id": "T022",
+    "worker_id": "A",
+    "claim_ttl_seconds": 7200,
+    "progress_deadline_seconds": 1800,
+    "max_recovery_attempts": 3
+  },
+  "created_at": "2026-09-23T17:09:00Z"
+}
