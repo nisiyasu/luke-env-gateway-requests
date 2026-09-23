@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-09-23T09:57:10Z",
+  "expected_lane_head": "e000aa9c677b7342ec76ba50abaa8f845214547c",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 54,
+  "operation_id": "worker-b-loop-20260923T0957Z-t019-close2-op",
+  "operation_type": "ISSUE_CLOSE",
+  "owner_run_id": "worker-b-loop-20260923T083308Z-t019",
+  "payload": {
+    "completion_evidence": [
+      "commit:e000aa9c677b7342ec76ba50abaa8f845214547c",
+      "file:prototypes/target-image-threejs/verification/capture-canonical-playwright.cjs",
+      "MSI exact-head CAPTURE_PASS 941x1672 DPR=1 runtime=ready pageErrors=[]",
+      "evidence-local/t019-exact-head/actual.png",
+      "evidence-local/t019-exact-head/runtime-audit.json"
+    ],
+    "completion_mode": "TASK_EVIDENCE",
+    "issue_number": 133,
+    "task_id": "T019",
+    "work_log_comment_id": 5792752762
+  },
+  "request_id": "worker-b-loop-20260923T0957Z-t019-close2",
+  "request_sha256": "a94d2f7a80a5872137ab0c41a13c214f88b0823466caaf0706f7f79e2eb6d035",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
