@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-09-23T08:35:28Z",
+  "expected_lane_head": "ee053be7c40555c5bef251e0c0446012ebbe5556",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 49,
+  "operation_id": "worker-b-loop-20260923T083308Z-t019-claim-lease-release-op",
+  "operation_type": "LEASE_RELEASE",
+  "owner_run_id": "worker-b-loop-20260923T083308Z-t019",
+  "payload": {},
+  "request_id": "worker-b-loop-20260923T083308Z-t019-claim-lease-release",
+  "request_sha256": "66be281f7d6d77f6b26e2b63db329490b5907a46e7371c80118bbdf5001d95a9",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
