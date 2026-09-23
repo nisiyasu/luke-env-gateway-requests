@@ -33,6 +33,7 @@ jobs:
           PYTHONDONTWRITEBYTECODE: "1"
         run: python finalize_inbox.py
       - name: Commit finalized requests
+        id: commit_requests
         run: |
           git config user.name "lq-env-request-finalizer"
           git config user.email "lq-env-request-finalizer@users.noreply.github.com"
@@ -48,11 +49,13 @@ jobs:
           fi
           if git diff --cached --quiet; then
             echo "No finalized request changes."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit -m "gateway: finalize request drafts"
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             echo "push race detected; rebasing attempt=$attempt"
@@ -60,3 +63,34 @@ jobs:
           done
           echo "finalizer push retries exhausted"
           exit 1
+
+      - name: Dispatch target pollers immediately
+        if: steps.commit_requests.outputs.changed == 'true'
+        env:
+          TARGET_TOKEN: ${{ secrets.LQ_TARGET_DISPATCH_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "$TARGET_TOKEN" ]; then
+            echo "TARGET_DISPATCH_TOKEN_AVAILABLE=false"
+            exit 1
+          fi
+
+          dispatch() {
+            workflow="$1"
+            code=$(curl -sS -o response.json -w "%{http_code}" \
+              -X POST \
+              -H "Authorization: Bearer $TARGET_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/nisiyasu/-luke-quest/actions/workflows/$workflow/dispatches" \
+              -d '{"ref":"main"}')
+            echo "$workflow HTTP_STATUS=$code"
+            if [ "$code" != "204" ]; then
+              cat response.json || true
+              return 1
+            fi
+          }
+
+          dispatch env-visual-gateway-request-poller.yml
+          dispatch environment-visual-evidence-production.yml

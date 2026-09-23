@@ -3,7 +3,6 @@ name: Dispatch LUKE QUEST Target Pollers
 on:
   workflow_run:
     workflows:
-      - "Finalize LUKE QUEST Gateway Drafts"
       - "Finalize LUKE QUEST Canonical Field Drafts"
     types:
       - completed
@@ -65,10 +64,6 @@ jobs:
           fi
 
           case "$SOURCE_WORKFLOW" in
-            "Finalize LUKE QUEST Gateway Drafts")
-              dispatch env-visual-gateway-request-poller.yml
-              dispatch environment-visual-evidence-production.yml
-              ;;
             "Finalize LUKE QUEST Canonical Field Drafts")
               dispatch canonical-field-gateway-request-poller.yml
               ;;
