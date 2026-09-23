@@ -1,0 +1,13 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-a-20260923T174100Z-t017-complete",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-a-20260923T173600Z-t017",
+  "lease_epoch":0,
+  "operation_id":"worker-a-20260923T174100Z-t017-complete-op",
+  "operation_type":"TASK_COMPLETE",
+  "expected_lane_head":"1978162053471b61f8f39a3dde485bbaa3f2bc78",
+  "payload":{"issue_number":131,"task_id":"T017","worker_id":"A","claim_generation":1,"exact_head":"1978162053471b61f8f39a3dde485bbaa3f2bc78","summary":"T017 canonical verification camera v1 fixed with deterministic perspective parameters, canonical 941x1672/DPR1 view, T016 P0 framing anchors, and explicit camera-change invalidation policy; exact-head readback PASS","acceptance":{"schema":"LQ_TASK_ACCEPTANCE:v1","task_id":"T017","evaluator_id":"T017_CANONICAL_CAMERA_CONTRACT_V1","result":"PASS","accepted_head":"1978162053471b61f8f39a3dde485bbaa3f2bc78","runtime_config":{"platform":"Worker A controller exact-head readback","command":"JSON contract validation: finite numeric camera fields; viewport=941x1672; DPR=1; abs(aspect-941/1672)<1e-12; seven T016 P0 centers preserved; legacy camera correction absent"},"evidence_artifacts":[{"kind":"canonical-camera-contract","sha256":"32d134a7fe698de02b4b369d1192c238062667a39388c15a7eb4be3e749c27aa","uri":"repo://nisiyasu/-luke-quest@1978162053471b61f8f39a3dde485bbaa3f2bc78/prototypes/target-image-threejs/verification/canonical-camera-v1.json"}],"evaluated_at":"2026-09-23T17:41:00Z"}},
+  "work_context":{"issue_number":131,"task_id":"T017","worker_id":"A","owner_run_id":"worker-a-20260923T173600Z-t017","claim_generation":1,"operation_id":"worker-a-20260923T174100Z-t017-complete-op","work_phase":"COMPLETION_SUBMITTED","submitted_payload_reference":"inbox/visual-rebuild/worker-a-20260923T174100Z-t017-complete.json","expected_head":"1978162053471b61f8f39a3dde485bbaa3f2bc78","last_progress_at":"2026-09-23T17:41:00Z","next_recovery_action":"RECONCILE_TASK_COMPLETE"},
+  "created_at":"2026-09-23T17:41:00Z"
+}
