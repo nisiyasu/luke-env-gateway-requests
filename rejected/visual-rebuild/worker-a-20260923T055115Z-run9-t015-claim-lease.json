@@ -1,0 +1,6 @@
+{
+  "error": "lane/path mismatch: /home/runner/work/luke-env-gateway-requests/luke-env-gateway-requests/inbox/visual-rebuild/worker-a-20260923T055115Z-run9-t015-claim-lease.json",
+  "error_type": "ValueError",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_DRAFT_REJECTION:v1",
+  "source_path": "inbox/visual-rebuild/worker-a-20260923T055115Z-run9-t015-claim-lease.json"
+}
