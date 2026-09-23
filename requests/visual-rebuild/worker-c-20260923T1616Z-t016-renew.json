@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-09-23T16:16:00Z",
+  "expected_lane_head": "1ebc099a29de55ee760f0aa6c2ced306f218d994",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-c-20260923T1616Z-t016-renew-op",
+  "operation_type": "WORK_CLAIM_RENEW",
+  "owner_run_id": "worker-c-20260923T1606Z-t016",
+  "payload": {
+    "claim_generation": 2,
+    "claim_ttl_seconds": 1800,
+    "issue_number": 130,
+    "progress_deadline_seconds": 600,
+    "task_id": "T016",
+    "worker_id": "C"
+  },
+  "request_id": "worker-c-20260923T1616Z-t016-renew",
+  "request_sha256": "19fe64cd3e0113145862b315894922c883d884b370c53d896127c7afc6bfb015",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
