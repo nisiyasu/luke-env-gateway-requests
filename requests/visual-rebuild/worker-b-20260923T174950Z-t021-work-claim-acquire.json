@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-09-23T17:49:50Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-b-20260923T174950Z-t021-work-claim-acquire-op",
+  "operation_type": "WORK_CLAIM_ACQUIRE",
+  "owner_run_id": "worker-b-20260923T174950Z-t021",
+  "payload": {
+    "claim_ttl_seconds": 7200,
+    "issue_number": 135,
+    "max_recovery_attempts": 3,
+    "progress_deadline_seconds": 1800,
+    "task_id": "T021",
+    "worker_id": "B"
+  },
+  "request_id": "worker-b-20260923T174950Z-t021-work-claim-acquire",
+  "request_sha256": "51afe43596c1a09a7b30943b5ee6fc477f035e79cb710a4fff24ff451e980836",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
