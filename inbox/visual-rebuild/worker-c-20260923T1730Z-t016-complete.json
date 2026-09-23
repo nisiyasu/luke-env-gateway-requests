@@ -1,0 +1,42 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-c-20260923T1730Z-t016-complete",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-c-20260923T1721Z-t016",
+  "lease_epoch":0,
+  "operation_id":"worker-c-20260923T1730Z-t016-complete-op",
+  "operation_type":"TASK_COMPLETE",
+  "expected_lane_head":"b9d3111e9400b809c0649213d518a473d5270448",
+  "payload":{
+    "issue_number":130,
+    "task_id":"T016",
+    "worker_id":"C",
+    "claim_generation":3,
+    "exact_head":"b9d3111e9400b809c0649213d518a473d5270448",
+    "summary":"T016 normalized ROI, anchor semantics, and depth intent fixed for all 22 critical landmarks; exact-head validation PASS",
+    "acceptance":{
+      "schema":"LQ_TASK_ACCEPTANCE:v1",
+      "task_id":"T016",
+      "evaluator_id":"T016_SPATIAL_INTENT_CONTRACT_V1",
+      "result":"PASS",
+      "accepted_head":"b9d3111e9400b809c0649213d518a473d5270448",
+      "runtime_config":{"command":"exact-head JSON validation: 22 catalog ids; ROI bounds/positive area; catalog centers inside ROI; source identity/catalog preservation","platform":"MSI Worker C"},
+      "evidence_artifacts":[{"kind":"spatial-intent-catalog","uri":"repo://nisiyasu/-luke-quest@b9d3111e9400b809c0649213d518a473d5270448/prototypes/target-image-threejs/verification/landmark-spatial-intent-v1.json","sha256":"5ce567de8230d3f8e3ae1a3febfb22d345cae6affef6e4d445ed07ed91511483"}],
+      "evaluated_at":"2026-09-23T17:30:00Z"
+    }
+  },
+  "created_at":"2026-09-23T17:30:00Z",
+  "work_context":{
+    "issue_number":130,
+    "task_id":"T016",
+    "worker_id":"C",
+    "owner_run_id":"worker-c-20260923T1721Z-t016",
+    "claim_generation":3,
+    "operation_id":"worker-c-20260923T1730Z-t016-complete-op",
+    "work_phase":"COMPLETION_SUBMITTED",
+    "submitted_payload_reference":"inbox/visual-rebuild/worker-c-20260923T1730Z-t016-complete.json",
+    "expected_head":"b9d3111e9400b809c0649213d518a473d5270448",
+    "last_progress_at":"2026-09-23T17:30:00Z",
+    "next_recovery_action":"RECONCILE_TASK_COMPLETE"
+  }
+}
