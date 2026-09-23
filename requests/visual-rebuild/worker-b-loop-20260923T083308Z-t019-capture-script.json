@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-09-23T08:43:31Z",
+  "expected_lane_head": "ee053be7c40555c5bef251e0c0446012ebbe5556",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 51,
+  "operation_id": "worker-b-loop-20260923T083308Z-t019-capture-script-op",
+  "operation_type": "IMPLEMENTATION_FILE_UPDATE",
+  "owner_run_id": "worker-b-loop-20260923T083308Z-t019",
+  "payload": {
+    "content": "const { chromium } = require(\"playwright\");\nconst fs = require(\"fs\");\nconst path = require(\"path\");\n\nconst outputDir = path.resolve(process.argv[2] || \"evidence-local\");\nconst url = process.argv[3] || \"http://127.0.0.1:8140/index.html\";\nconst executablePath = process.env.LQ_CHROME_PATH || \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\";\nconst errors = [];\n\n(async () => {\n  fs.mkdirSync(outputDir, { recursive: true });\n  const browser = await chromium.launch({\n    headless: true,\n    executablePath,\n    args: [\"--use-angle=swiftshader\", \"--enable-unsafe-swiftshader\", \"--ignore-gpu-blocklist\", \"--disable-dev-shm-usage\"],\n  });\n  const page = await browser.newPage({\n    viewport: { width: 941, height: 1672 },\n    deviceScaleFactor: 1,\n  });\n  page.on(\"pageerror\", (error) => errors.push(String(error)));\n  page.on(\"response\", (response) => {\n    if (response.status() >= 400 && !response.url().endsWith(\"/favicon.ico\")) {\n      errors.push(`http:${response.status()}:${response.url()}`);\n    }\n  });\n  page.on(\"console\", (message) => {\n    const text = message.text();\n    const faviconNoise =\n      message.type() === \"error\" &&\n      text.includes(\"Failed to load resource\") &&\n      text.includes(\"404\");\n    if (message.type() === \"error\" && !faviconNoise) errors.push(\"console:\" + text);\n  });\n  await page.goto(url, { waitUntil: \"domcontentloaded\", timeout: 150000 });\n  await page.waitForLoadState(\"networkidle\", { timeout: 150000 }).catch(() => {});\n  await page.waitForTimeout(500);\n  await page.screenshot({ path: path.join(outputDir, \"actual.png\"), fullPage: false });\n  const meta = await page.evaluate(() => ({\n    width: window.innerWidth,\n    height: window.innerHeight,\n    devicePixelRatio: window.devicePixelRatio,\n    runtime: document.documentElement.dataset.lqTargetImageRuntime || null,\n  }));\n  const audit = { url, meta, browserVersion: browser.version(), pageErrors: errors };\n  fs.writeFileSync(path.join(outputDir, \"runtime-audit.json\"), JSON.stringify(audit, null, 2));\n  await browser.close();\n  if (meta.width !== 941 || meta.height !== 1672 || meta.devicePixelRatio !== 1) {\n    throw new Error(\"CANONICAL_VIEWPORT_MISMATCH \" + JSON.stringify(meta));\n  }\n  if (errors.length) throw new Error(\"RUNTIME_ERRORS \" + JSON.stringify(errors));\n  console.log(JSON.stringify({ status: \"CAPTURE_PASS\", ...audit }));\n})().catch((error) => {\n  console.error(error);\n  process.exit(1);\n});\n",
+    "encoding": "utf-8",
+    "path": "prototypes/target-image-threejs/verification/capture-canonical-playwright.cjs"
+  },
+  "request_id": "worker-b-loop-20260923T083308Z-t019-capture-script",
+  "request_sha256": "db13412313808dd51c74d14abd31d242ef7429ae3f1a819a3f6e3762459c9dab",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
