@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-09-23T17:54:00Z",
+  "expected_lane_head": "a8542ee022152c842b5100d65f9ae76b30d4997a",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-b-20260923T175400Z-t021-patchset-op",
+  "operation_type": "IMPLEMENTATION_PATCHSET",
+  "owner_run_id": "worker-b-20260923T174950Z-t021",
+  "payload": {
+    "claim_generation": 1,
+    "commit_message": "T021: implement normalized landmark measurement",
+    "files": [
+      {
+        "content": "aW1wb3J0IGZzIGZyb20gJ25vZGU6ZnMnOwppbXBvcnQgcGF0aCBmcm9tICdub2RlOnBhdGgnOwoKY29uc3QgaW5wdXRQYXRoID0gcGF0aC5yZXNvbHZlKHByb2Nlc3MuYXJndlsyXSB8fCAncHJvdG90eXBlcy90YXJnZXQtaW1hZ2UtdGhyZWVqcy92ZXJpZmljYXRpb24vbGFuZG1hcmstc3BhdGlhbC1pbnRlbnQtdjEuanNvbicpOwpjb25zdCBvdXRwdXRQYXRoID0gcGF0aC5yZXNvbHZlKHByb2Nlc3MuYXJndlszXSB8fCAnZXZpZGVuY2UtbG9jYWwvbGFuZG1hcmstbWVhc3VyZW1lbnQtdjEuanNvbicpOwpjb25zdCBzb3VyY2UgPSBKU09OLnBhcnNlKGZzLnJlYWRGaWxlU3luYyhpbnB1dFBhdGgsICd1dGY4JykpOwpjb25zdCB7IHdpZHRoLCBoZWlnaHQsIGRwciB9ID0gc291cmNlLnNvdXJjZS52aWV3cG9ydDsKaWYgKHdpZHRoICE9PSA5NDEgfHwgaGVpZ2h0ICE9PSAxNjcyIHx8IGRwciAhPT0gMSkgdGhyb3cgbmV3IEVycm9yKCdDQU5PTklDQUxfVklFV1BPUlRfUkVRVUlSRUQnKTsKCmNvbnN0IHJvdW5kID0gKG4pID0+IE51bWJlcihuLnRvRml4ZWQoNikpOwpjb25zdCBtZWFzdXJlbWVudHMgPSBzb3VyY2UubGFuZG1hcmtzLm1hcCgobG0pID0+IHsKICBjb25zdCByID0gbG0ucm9pX25vcm07CiAgaWYgKCFyIHx8IHIueF9taW4gPCAwIHx8IHIueV9taW4gPCAwIHx8IHIueF9tYXggPiAxIHx8IHIueV9tYXggPiAxIHx8IHIueF9tYXggPD0gci54X21pbiB8fCByLnlfbWF4IDw9IHIueV9taW4pIHsKICAgIHRocm93IG5ldyBFcnJvcihgSU5WQUxJRF9ST0k6JHtsbS5pZH1gKTsKICB9CiAgY29uc3Qgd2lkdGhOb3JtID0gcm91bmQoci54X21heCAtIHIueF9taW4pOwogIGNvbnN0IGhlaWdodE5vcm0gPSByb3VuZChyLnlfbWF4IC0gci55X21pbik7CiAgY29uc3Qgcm9pQ2VudGVyID0geyB4OiByb3VuZCgoci54X21pbiArIHIueF9tYXgpIC8gMiksIHk6IHJvdW5kKChyLnlfbWluICsgci55X21heCkgLyAyKSB9OwogIHJldHVybiB7CiAgICBpZDogbG0uaWQsIG5hbWU6IGxtLm5hbWUsIHByaW9yaXR5OiBsbS5wcmlvcml0eSwgc3BhY2U6IGxtLnNwYWNlLAogICAgY2VudGVyX25vcm06IGxtLmNlbnRlcl9ub3JtLCByb2lfY2VudGVyX25vcm06IHJvaUNlbnRlciwKICAgIHNpemVfbm9ybTogeyB3aWR0aDogd2lkdGhOb3JtLCBoZWlnaHQ6IGhlaWdodE5vcm0gfSwKICAgIHJlZmVyZW5jZV9saW5lc19ub3JtOiB7IGxlZnQ6IHIueF9taW4sIHJpZ2h0OiByLnhfbWF4LCB0b3A6IHIueV9taW4sIGJvdHRvbTogci55X21heCwKICAgICAgaG9yaXpvbnRhbF9jZW50ZXI6IHJvaUNlbnRlci55LCB2ZXJ0aWNhbF9jZW50ZXI6IHJvaUNlbnRlci54IH0sCiAgICBkZXB0aF9pbnRlbnQ6IGxtLmRlcHRoX2ludGVudAogIH07Cn0pO2NvbnN0IHJlc3VsdCA9IHsKICBzY2hlbWE6ICdMUV9MQU5ETUFSS19NRUFTVVJFTUVOVDp2MScsIHRhc2tfaWQ6ICdUMDIxJywKICBzb3VyY2VfaWRlbnRpdHk6IHsKICAgIHRhcmdldF9ibG9iX3NoYTogc291cmNlLnNvdXJjZS50YXJnZXRfYmxvYl9zaGEsCiAgICB0YXJnZXRfc291cmNlX2NvbW1pdF9zaGE6IHNvdXJjZS5zb3VyY2UudGFyZ2V0X3NvdXJjZV9jb21taXRfc2hhLAogICAgdmlld3BvcnQ6IHNvdXJjZS5zb3VyY2Uudmlld3BvcnQsCiAgICBzcGF0aWFsX2ludGVudF9wYXRoOiBwYXRoLnJlbGF0aXZlKHByb2Nlc3MuY3dkKCksIGlucHV0UGF0aCkucmVwbGFjZUFsbCgnXFwnLCAnLycpCiAgfSwKICBjb29yZGluYXRlX2NvbnZlbnRpb246IHNvdXJjZS5jb29yZGluYXRlX2NvbnZlbnRpb24sCiAgbWVhc3VyZW1lbnRfY291bnQ6IG1lYXN1cmVtZW50cy5sZW5ndGgsCiAgbWVhc3VyZW1lbnRzLAogIGdhdGVfc3VtbWFyeTogewogICAgbWFjaGluZV9yZWFkYWJsZTogdHJ1ZSwKICAgIGFsbF9tZWFzdXJlbWVudHNfbm9ybWFsaXplZDogbWVhc3VyZW1lbnRzLmV2ZXJ5KChtKSA9PgogICAgICBbbS5jZW50ZXJfbm9ybS54LCBtLmNlbnRlcl9ub3JtLnksIG0uc2l6ZV9ub3JtLndpZHRoLCBtLnNpemVfbm9ybS5oZWlnaHRdLmV2ZXJ5KCh2KSA9PiB2ID49IDAgJiYgdiA8PSAxKSksCiAgICBwMF9jb3VudDogbWVhc3VyZW1lbnRzLmZpbHRlcigobSkgPT4gbS5wcmlvcml0eSA9PT0gJ1AwJykubGVuZ3RoLAogICAgcDFfY291bnQ6IG1lYXN1cmVtZW50cy5maWx0ZXIoKG0pID0+IG0ucHJpb3JpdHkgPT09ICdQMScpLmxlbmd0aCwKICAgIHAyX2NvdW50OiBtZWFzdXJlbWVudHMuZmlsdGVyKChtKSA9PiBtLnByaW9yaXR5ID09PSAnUDInKS5sZW5ndGgKICB9Cn07CmZzLm1rZGlyU3luYyhwYXRoLmRpcm5hbWUob3V0cHV0UGF0aCksIHsgcmVjdXJzaXZlOiB0cnVlIH0pOwpmcy53cml0ZUZpbGVTeW5jKG91dHB1dFBhdGgsIEpTT04uc3RyaW5naWZ5KHJlc3VsdCwgbnVsbCwgMikgKyAnXG4nKTsKaWYgKCFyZXN1bHQuZ2F0ZV9zdW1tYXJ5LmFsbF9tZWFzdXJlbWVudHNfbm9ybWFsaXplZCkgdGhyb3cgbmV3IEVycm9yKCdOT1JNQUxJWkFUSU9OX0dBVEVfRkFJTCcpOwpjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeSh7IHN0YXR1czogJ0xBTkRNQVJLX01FQVNVUkVNRU5UX1BBU1MnLCBvdXRwdXRQYXRoLCAuLi5yZXN1bHQuZ2F0ZV9zdW1tYXJ5IH0pKTs=",
+        "encoding": "base64",
+        "path": "prototypes/target-image-threejs/verification/landmark-measurement-v1.mjs"
+      }
+    ],
+    "issue_number": 135,
+    "task_id": "T021",
+    "worker_id": "B"
+  },
+  "request_id": "worker-b-20260923T175400Z-t021-patchset",
+  "request_sha256": "08127ffd0374774ba36f18aec532421db92467e513c211258dbf9f87cc84e930",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
+  "work_context": {
+    "claim_generation": 1,
+    "expected_head": "a8542ee022152c842b5100d65f9ae76b30d4997a",
+    "issue_number": 135,
+    "last_progress_at": "2026-09-23T17:54:00Z",
+    "next_recovery_action": "RECONCILE_PATCHSET_RECEIPT",
+    "operation_id": "worker-b-20260923T175400Z-t021-patchset-op",
+    "owner_run_id": "worker-b-20260923T174950Z-t021",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-b-20260923T175400Z-t021-patchset.json",
+    "task_id": "T021",
+    "work_phase": "PATCHSET_SUBMITTED",
+    "worker_id": "B"
+  }
+}
