@@ -47,6 +47,9 @@ ALLOWED_OPS = {
     "LEASE_HEARTBEAT",
     "LEASE_RELEASE",
     "WORK_CLAIM_ACQUIRE",
+    "WORK_CLAIM_RENEW",
+    "WORK_CLAIM_RELEASE",
+    "WORK_CLAIM_TAKEOVER",
     "IMPLEMENTATION_PATCHSET",
     "TASK_COMPLETE",
     "IMPLEMENTATION_FILE_UPDATE",
@@ -57,6 +60,11 @@ ALLOWED_OPS = {
     "DURABLE_EVIDENCE_PUBLISH",
     "DURABLE_EVIDENCE_PUBLISH_FROM_ARTIFACT",
     "EVIDENCE_ADOPT",
+}
+
+DURABLE_WORK_CONTEXT_OPS = {
+    "IMPLEMENTATION_PATCHSET",
+    "TASK_COMPLETE",
 }
 
 
@@ -94,12 +102,61 @@ def validate_mutation(path: pathlib.Path, req: dict, lane: str) -> list[str]:
     errors = common_checks(path, req, lane)
     if req.get("schema") != "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1":
         errors.append(f"{path}: mutation schema mismatch")
-    if req.get("operation_type") not in ALLOWED_OPS:
+    op = req.get("operation_type")
+    if op not in ALLOWED_OPS:
         errors.append(f"{path}: operation_type not allowlisted")
     if not req.get("operation_id") or not req.get("owner_run_id"):
         errors.append(f"{path}: operation_id/owner_run_id required")
     if not isinstance(req.get("lease_epoch"), int) or req["lease_epoch"] < 0:
         errors.append(f"{path}: lease_epoch must be non-negative int")
+
+    if op in {
+        "WORK_CLAIM_ACQUIRE",
+        "WORK_CLAIM_RENEW",
+        "WORK_CLAIM_RELEASE",
+        "WORK_CLAIM_TAKEOVER",
+        "IMPLEMENTATION_PATCHSET",
+        "TASK_COMPLETE",
+    } and lane != "visual-rebuild":
+        errors.append(f"{path}: atomic work operation is visual-rebuild only")
+
+    if op in DURABLE_WORK_CONTEXT_OPS:
+        ctx = req.get("work_context")
+        payload = req.get("payload") or {}
+        if not isinstance(ctx, dict):
+            errors.append(f"{path}: work_context required")
+        else:
+            expected_phase = {
+                "IMPLEMENTATION_PATCHSET": "PATCHSET_SUBMITTED",
+                "TASK_COMPLETE": "COMPLETION_SUBMITTED",
+            }[op]
+            checks = {
+                "issue_number": payload.get("issue_number"),
+                "task_id": payload.get("task_id"),
+                "worker_id": payload.get("worker_id"),
+                "owner_run_id": req.get("owner_run_id"),
+                "claim_generation": payload.get("claim_generation"),
+                "operation_id": req.get("operation_id"),
+                "work_phase": expected_phase,
+                "expected_head": req.get("expected_lane_head"),
+            }
+            for key, value in checks.items():
+                if ctx.get(key) != value:
+                    errors.append(f"{path}: work_context mismatch {key}")
+            expected_ref = f"inbox/{lane}/{req.get('request_id')}.json"
+            if ctx.get("submitted_payload_reference") != expected_ref:
+                errors.append(
+                    f"{path}: work_context submitted_payload_reference mismatch"
+                )
+            if not ctx.get("last_progress_at"):
+                errors.append(f"{path}: work_context last_progress_at required")
+            if not ctx.get("next_recovery_action"):
+                errors.append(f"{path}: work_context next_recovery_action required")
+            if (
+                not isinstance(ctx.get("claim_generation"), int)
+                or ctx.get("claim_generation") <= 0
+            ):
+                errors.append(f"{path}: work_context claim_generation must be positive")
     return errors
 
 

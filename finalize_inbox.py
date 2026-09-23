@@ -49,6 +49,8 @@ def mutation_from_draft(draft: dict) -> dict:
         "created_at": draft.get("created_at"),
         "request_sha256": "",
     }
+    if "work_context" in draft:
+        out["work_context"] = draft["work_context"]
     return finalize_hash(out)
 
 
