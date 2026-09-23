@@ -1,0 +1,12 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-c-20260923T1616Z-t016-renew",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-c-20260923T1606Z-t016",
+  "lease_epoch":0,
+  "operation_id":"worker-c-20260923T1616Z-t016-renew-op",
+  "operation_type":"WORK_CLAIM_RENEW",
+  "expected_lane_head":"1ebc099a29de55ee760f0aa6c2ced306f218d994",
+  "payload":{"issue_number":130,"task_id":"T016","worker_id":"C","claim_generation":2,"claim_ttl_seconds":1800,"progress_deadline_seconds":600},
+  "created_at":"2026-09-23T16:16:00Z"
+}
