@@ -1,0 +1,12 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-b-loop-20260923T083308Z-t019-claim-lease-release",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "worker-b-loop-20260923T083308Z-t019",
+  "lease_epoch": 49,
+  "operation_id": "worker-b-loop-20260923T083308Z-t019-claim-lease-release-op",
+  "operation_type": "LEASE_RELEASE",
+  "expected_lane_head": "ee053be7c40555c5bef251e0c0446012ebbe5556",
+  "payload": {},
+  "created_at": "2026-09-23T08:35:28Z"
+}
