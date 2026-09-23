@@ -1,0 +1,14 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-a-20260923T055115Z-run9-t015-claim-lease",
+  "lane": "visual-rebuild",
+  "operation": "LEASE_ACQUIRE",
+  "owner_run_id": "worker-a-20260923T055115Z-run9",
+  "worker_id": "A",
+  "ttl_seconds": 120,
+  "target_repository": "nisiyasu/-luke-quest",
+  "implementation_branch": "experiment/target-image-threejs-v1",
+  "expected_head": "6b4220752ee83d9a6fdb70c7737e371df9b0ca54",
+  "issue_number": 129,
+  "task_id": "T015"
+}
