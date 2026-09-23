@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-09-23T17:30:00Z",
+  "expected_lane_head": "b9d3111e9400b809c0649213d518a473d5270448",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-c-20260923T1730Z-t016-complete-op",
+  "operation_type": "TASK_COMPLETE",
+  "owner_run_id": "worker-c-20260923T1721Z-t016",
+  "payload": {
+    "acceptance": {
+      "accepted_head": "b9d3111e9400b809c0649213d518a473d5270448",
+      "evaluated_at": "2026-09-23T17:30:00Z",
+      "evaluator_id": "T016_SPATIAL_INTENT_CONTRACT_V1",
+      "evidence_artifacts": [
+        {
+          "kind": "spatial-intent-catalog",
+          "sha256": "5ce567de8230d3f8e3ae1a3febfb22d345cae6affef6e4d445ed07ed91511483",
+          "uri": "repo://nisiyasu/-luke-quest@b9d3111e9400b809c0649213d518a473d5270448/prototypes/target-image-threejs/verification/landmark-spatial-intent-v1.json"
+        }
+      ],
+      "result": "PASS",
+      "runtime_config": {
+        "command": "exact-head JSON validation: 22 catalog ids; ROI bounds/positive area; catalog centers inside ROI; source identity/catalog preservation",
+        "platform": "MSI Worker C"
+      },
+      "schema": "LQ_TASK_ACCEPTANCE:v1",
+      "task_id": "T016"
+    },
+    "claim_generation": 3,
+    "exact_head": "b9d3111e9400b809c0649213d518a473d5270448",
+    "issue_number": 130,
+    "summary": "T016 normalized ROI, anchor semantics, and depth intent fixed for all 22 critical landmarks; exact-head validation PASS",
+    "task_id": "T016",
+    "worker_id": "C"
+  },
+  "request_id": "worker-c-20260923T1730Z-t016-complete",
+  "request_sha256": "bd04a56bb3b1179b62d21cadefe6a5579e1b889c490c8f83c03ef1ad116c3b93",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
+  "work_context": {
+    "claim_generation": 3,
+    "expected_head": "b9d3111e9400b809c0649213d518a473d5270448",
+    "issue_number": 130,
+    "last_progress_at": "2026-09-23T17:30:00Z",
+    "next_recovery_action": "RECONCILE_TASK_COMPLETE",
+    "operation_id": "worker-c-20260923T1730Z-t016-complete-op",
+    "owner_run_id": "worker-c-20260923T1721Z-t016",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-c-20260923T1730Z-t016-complete.json",
+    "task_id": "T016",
+    "work_phase": "COMPLETION_SUBMITTED",
+    "worker_id": "C"
+  }
+}
