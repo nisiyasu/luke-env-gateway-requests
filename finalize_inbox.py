@@ -87,6 +87,13 @@ def write_once(destination: pathlib.Path, obj: dict) -> bool:
     destination.write_text(data, encoding="utf-8")
     return True
 
+def write_rejection_once(destination: pathlib.Path, obj: dict) -> bool:
+    """Preserve the first rejection without blocking unrelated drafts."""
+    if destination.exists():
+        print(f"ALREADY_REJECTED {destination.relative_to(ROOT)}")
+        return False
+    return write_once(destination, obj)
+
 
 LEASE_LIFECYCLE_OPS = {"LEASE_ACQUIRE", "LEASE_HEARTBEAT", "LEASE_RELEASE"}
 MAX_ACQUIRE_AGE_SECONDS = 900
@@ -206,11 +213,11 @@ def main() -> None:
                 "error_type": type(exc).__name__,
                 "error": str(exc),
             }
-            write_once(reject, report)
-            print(
-                f"REJECTED {path.relative_to(ROOT)}: "
-                f"{type(exc).__name__}: {exc}"
-            )
+            if write_rejection_once(reject, report):
+                print(
+                    f"REJECTED {path.relative_to(ROOT)}: "
+                    f"{type(exc).__name__}: {exc}"
+                )
 
     superseded = supersede_old_lease_lifecycle()
 
