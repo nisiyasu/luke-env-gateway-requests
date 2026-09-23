@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-09-23T17:38:00Z",
+  "expected_lane_head": "b9d3111e9400b809c0649213d518a473d5270448",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-a-20260923T173800Z-t017-patchset-op",
+  "operation_type": "IMPLEMENTATION_PATCHSET",
+  "owner_run_id": "worker-a-20260923T173600Z-t017",
+  "payload": {
+    "claim_generation": 1,
+    "commit_message": "T017: fix canonical verification camera v1",
+    "files": [
+      {
+        "content": "{\n  \"schema\": \"LUKE_QUEST_CANONICAL_CAMERA:v1\",\n  \"task_id\": \"T017\",\n  \"status\": \"FIXED\",\n  \"coordinate_system\": {\n    \"world\": \"right-handed, Y-up\",\n    \"target_point\": [0.0, 0.0, 0.0],\n    \"note\": \"World scale is a G0 gauge choice. Whitebox geometry is reconstructed into this frame; legacy scene offsets/camera corrections are forbidden.\"\n  },\n  \"camera\": {\n    \"type\": \"PerspectiveCamera\",\n    \"position\": [0.0, 18.0, 18.0],\n    \"target\": [0.0, 0.0, 0.0],\n    \"up\": [0.0, 1.0, 0.0],\n    \"fov_degrees\": 35.0,\n    \"aspect\": 0.562799043062,\n    \"near\": 0.1,\n    \"far\": 1000.0,\n    \"roll_degrees\": 0.0\n  },\n  \"verification_view\": {\n    \"viewport_css_px\": [941, 1672],\n    \"dpr\": 1,\n    \"orientation\": \"portrait\",\n    \"crop\": \"none\",\n    \"padding\": \"none\",\n    \"full_page\": false,\n    \"camera_motion\": \"disabled during canonical capture\",\n    \"projection_update\": \"camera.aspect = 941/1672; updateProjectionMatrix() before capture\"\n  },\n  \"framing_contract\": {\n    \"authority\": \"Target-derived screen-space landmarks from T016; world camera gauge fixed here, geometry must converge to target rather than changing camera ad hoc.\",\n    \"primary_screen_anchors\": [\n      {\"id\":\"P0-01\",\"center_norm\":[0.5,0.626]},\n      {\"id\":\"P0-02\",\"center_norm\":[0.501,0.651]},\n      {\"id\":\"P0-03\",\"center_norm\":[0.555,0.488]},\n      {\"id\":\"P0-04\",\"center_norm\":[0.755,0.458]},\n      {\"id\":\"P0-05\",\"center_norm\":[0.494,0.278]},\n      {\"id\":\"P0-06\",\"center_norm\":[0.81,0.255]},\n      {\"id\":\"P0-07\",\"center_norm\":[0.508,0.875]}\n    ],\n    \"camera_change_policy\": \"Any change to position/target/up/fov/aspect/near/far/roll invalidates prior canonical-view evidence and requires a new version. G1 T041 may tune framing only by creating a new explicitly versioned canonical-camera record; no hidden runtime correction.\"\n  },\n  \"source_authority\": {\n    \"target_path\": \"assets/reference/owner_2026-09-11_ps1_visual_target/TARGET_PS1_FINAL.png\",\n    \"target_blob_sha\": \"b7281e6580689a7a22cfa3b67d500950e4af7285\",\n    \"target_source_commit_sha\": \"90635ceff9d35d69f80da350df1e6ea0610657dd\",\n    \"canonical_state_path\": \"docs/autonomy/evidence/T014_G0_CANONICAL_STATE_v1.md\",\n    \"spatial_intent_path\": \"prototypes/target-image-threejs/verification/landmark-spatial-intent-v1.json\"\n  },\n  \"acceptance_checks\": [\n    \"all camera numeric fields present and finite\",\n    \"aspect equals 941/1672\",\n    \"viewport 941x1672 and DPR=1\",\n    \"P0 anchor centers preserved from T016\",\n    \"no legacy prototype/modern-3d camera correction imported\"\n  ]\n}\n",
+        "path": "prototypes/target-image-threejs/verification/canonical-camera-v1.json"
+      }
+    ],
+    "issue_number": 131,
+    "task_id": "T017",
+    "worker_id": "A"
+  },
+  "request_id": "worker-a-20260923T173800Z-t017-patchset",
+  "request_sha256": "0fb680d9462bf500e6e00e1c7500fc322b1364861e4b0cd0b525b217612ebb70",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
+  "work_context": {
+    "claim_generation": 1,
+    "expected_head": "b9d3111e9400b809c0649213d518a473d5270448",
+    "issue_number": 131,
+    "last_progress_at": "2026-09-23T17:38:00Z",
+    "next_recovery_action": "RECONCILE_OR_APPLY_PATCHSET",
+    "operation_id": "worker-a-20260923T173800Z-t017-patchset-op",
+    "owner_run_id": "worker-a-20260923T173600Z-t017",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-a-20260923T173800Z-t017-patchset.json",
+    "task_id": "T017",
+    "work_phase": "PATCHSET_SUBMITTED",
+    "worker_id": "A"
+  }
+}
