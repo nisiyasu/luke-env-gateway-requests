@@ -1,0 +1,70 @@
+{
+  "created_at": "2026-09-23T18:44:00Z",
+  "expected_lane_head": "2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-a-20260923T184400Z-t024-complete-op",
+  "operation_type": "TASK_COMPLETE",
+  "owner_run_id": "worker-a-20260923T183800Z-t024",
+  "payload": {
+    "acceptance": {
+      "accepted_head": "2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+      "evaluated_at": "2026-09-23T18:44:00Z",
+      "evaluator_id": "T024_G0_EXACT_HEAD_AUDIT_V1",
+      "evidence_artifacts": [
+        {
+          "kind": "g0-reference-set",
+          "sha256": "f7ac7cf048e3a3029bbf1cb01c6b1fcc9dc72a2d5bee6fb03e6e11626a597364",
+          "uri": "repo://nisiyasu/-luke-quest@2ddebbe1a00f27f90828e747c4c4626c9b1f147d/docs/autonomy/evidence/T013_G0_REFERENCE_SET_v1.md"
+        },
+        {
+          "kind": "visual-evidence-contract",
+          "sha256": "e8aba0350967d27ddcd54ae946230883d97dff3b6fd7001182f2a75b4efcf791",
+          "uri": "repo://nisiyasu/-luke-quest@2ddebbe1a00f27f90828e747c4c4626c9b1f147d/prototypes/target-image-threejs/verification/visual-evidence-contract-v1.schema.json"
+        },
+        {
+          "kind": "additional-verification-views",
+          "sha256": "c70c7567b7755833d9442fc89e74b26049f7a41ed1582dd1bfda53042a769610",
+          "uri": "repo://nisiyasu/-luke-quest@2ddebbe1a00f27f90828e747c4c4626c9b1f147d/prototypes/target-image-threejs/verification/additional-verification-views-v1.json"
+        }
+      ],
+      "result": "PASS",
+      "runtime_config": {
+        "blocking_finding": "Formal adopted G0 Evidence Set/Gate Record is absent from evidence/visual-verification",
+        "capture_result": "PASS width=941 height=1672 DPR=1 runtime=ready pageErrors=0",
+        "command": "Fresh exact-head readback of G0 artifacts and T023 evidence contract; canonical runtime capture 941x1672 DPR1; overlay/diff generation; evidence/visual-verification lookup",
+        "gate_verdict": "FAIL_NOT_YET_COMPLETE",
+        "overlay_diff_result": "PASS changedPixelRatio=0.9992741611540202 meanAbsoluteError=169.94190068931385",
+        "platform": "MSI C:\\luke-loop-a + GitHub exact-head readback"
+      },
+      "schema": "LQ_TASK_ACCEPTANCE:v1",
+      "task_id": "T024"
+    },
+    "claim_generation": 1,
+    "exact_head": "2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+    "issue_number": 141,
+    "summary": "T024 audit executed at exact HEAD. G0 gate finding is FAIL/NOT_YET_COMPLETE because the T023 contract requires an adopted Evidence Set + Gate Record under evidence/visual-rebuild/issue-*/<evidence_set_id>/, but no evidence/visual-rebuild root exists on evidence/visual-verification. Fresh canonical capture itself passed at 941x1672 DPR1 with runtime=ready and zero page errors; overlay/diff generation passed and measured changedPixelRatio=0.9992741611540202, MAE=169.94190068931385. This completes the audit task, not the G0 gate.",
+    "task_id": "T024",
+    "worker_id": "A"
+  },
+  "request_id": "worker-a-20260923T184400Z-t024-complete",
+  "request_sha256": "cd23476981c2dac86cfcd1029e075c23bf3854741f05b155b183970b7c4e4df4",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
+  "work_context": {
+    "claim_generation": 1,
+    "expected_head": "2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+    "issue_number": 141,
+    "last_progress_at": "2026-09-23T18:44:00Z",
+    "next_recovery_action": "RECONCILE_TASK_COMPLETE",
+    "operation_id": "worker-a-20260923T184400Z-t024-complete-op",
+    "owner_run_id": "worker-a-20260923T183800Z-t024",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-a-20260923T184400Z-t024-complete.json",
+    "task_id": "T024",
+    "work_phase": "COMPLETION_SUBMITTED",
+    "worker_id": "A"
+  }
+}
