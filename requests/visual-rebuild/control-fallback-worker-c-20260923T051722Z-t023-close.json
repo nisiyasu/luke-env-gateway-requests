@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-09-23T05:29:34Z",
+  "expected_lane_head": "6b4220752ee83d9a6fdb70c7737e371df9b0ca54",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 35,
+  "operation_id": "control-fallback-worker-c-20260923T051722Z-t023-close-op",
+  "operation_type": "ISSUE_CLOSE",
+  "owner_run_id": "control-fallback-worker-c-20260923T051722Z",
+  "payload": {
+    "completion_evidence": [
+      "implementation_head=6b4220752ee83d9a6fdb70c7737e371df9b0ca54",
+      "prototypes/target-image-threejs/verification/visual-evidence-contract-v1.schema.json",
+      "prototypes/target-image-threejs/verification/README.md",
+      "schema_sha256=e8aba0350967d27ddcd54ae946230883d97dff3b6fd7001182f2a75b4efcf791",
+      "readme_sha256=d55a1ca327ac73b32b67e1e656d5d9c4cf5d15c81eec8f456dcb361b48ad5bcf",
+      "fresh_readback=PASS",
+      "structural_schema_validation=PASS"
+    ],
+    "completion_mode": "TASK_EVIDENCE",
+    "issue_number": 139,
+    "task_id": "T023",
+    "work_log_comment_id": 5789598943
+  },
+  "request_id": "control-fallback-worker-c-20260923T051722Z-t023-close",
+  "request_sha256": "885a615151f08bb410d62f7c70939a83b717f1e807d3e53232ede1aea7cbf5a3",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
