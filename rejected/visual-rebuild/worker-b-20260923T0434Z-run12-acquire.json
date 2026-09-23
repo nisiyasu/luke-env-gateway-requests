@@ -1,0 +1,6 @@
+{
+  "error": "Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)",
+  "error_type": "JSONDecodeError",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_DRAFT_REJECTION:v1",
+  "source_path": "inbox/visual-rebuild/worker-b-20260923T0434Z-run12-acquire.json"
+}
