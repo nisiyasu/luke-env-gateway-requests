@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-09-23T05:34:37Z",
+  "expected_lane_head": "6b4220752ee83d9a6fdb70c7737e371df9b0ca54",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 36,
+  "operation_id": "control-reconcile-t014-20260923T053329Z-worklog-op",
+  "operation_type": "ISSUE_COMMENT",
+  "owner_run_id": "control-reconcile-t014-20260923T053329Z",
+  "payload": {
+    "body": "T014 WORK LOG / Canonical State completion reconciliation\nTASK_ID=T014\nORIGINAL_WORKER=A\nCONTROL_RUN_ID=control-reconcile-t014-20260923T053329Z\nIMPLEMENTATION_BRANCH=experiment/target-image-threejs-v1\nIMPLEMENTATION_COMMIT=833221db72390b9f05627dc288145085676675cf\nCURRENT_HEAD=6b4220752ee83d9a6fdb70c7737e371df9b0ca54\nEVIDENCE_FILE=docs/autonomy/evidence/T014_G0_CANONICAL_STATE_v1.md\nEVIDENCE_BLOB_SHA=de06c1580c98761d0458accc16c11bc638466697\nEVIDENCE_SHA256=ae5a03eafa78f13bc3c7586308fd2955132bc47db93ba9389a6d4498c31cd7f7\nFRESH_READBACK=PASS\nCANONICAL_VIEWPORT=941x1672\nDPR=1\nSTATE_CONTRACT=scene/target identity/player/camera/time/weather/UI/random/simulation/quality comparison conditions fixed; guessed player/camera transforms explicitly INVALID until their dedicated G0 tasks define them.\nLEGACY_SEPARATION=prototype/modern-3d layout/offset/camera corrections forbidden as comparison authority.\nRESULT=PASS",
+    "issue_number": 128
+  },
+  "request_id": "control-reconcile-t014-20260923T053329Z-worklog",
+  "request_sha256": "265630101644534f8664c64c956ac9b89f767889f9c6cbe2a74532316232a956",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
