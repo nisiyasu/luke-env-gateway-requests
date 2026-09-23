@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-09-23T05:15:25Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 34,
+  "operation_id": "worker-a-20260923T0439Z-run10-t014-release-after-file-op",
+  "operation_type": "LEASE_RELEASE",
+  "owner_run_id": "worker-a-20260923T0439Z-run10",
+  "payload": {},
+  "request_id": "worker-a-20260923T0439Z-run10-t014-release-after-file",
+  "request_sha256": "2ab90c2e9f651268834b55d65e52d45ec9987d28f614a163b16eb4f737bd7df9",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
