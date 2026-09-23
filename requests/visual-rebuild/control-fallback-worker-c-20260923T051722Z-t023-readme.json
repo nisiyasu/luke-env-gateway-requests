@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-09-23T05:23:44Z",
+  "expected_lane_head": "1d1326428c9b468fe2b6c573bfcf2fc894a15352",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 35,
+  "operation_id": "control-fallback-worker-c-20260923T051722Z-t023-readme-op",
+  "operation_type": "IMPLEMENTATION_FILE_UPDATE",
+  "owner_run_id": "control-fallback-worker-c-20260923T051722Z",
+  "payload": {
+    "content": "# Visual Evidence Storage Contract v1\r\n\r\nTASK: T023\r\nISSUE: #139\r\nSTATUS: IMPLEMENTED\r\n\r\nThis directory defines the machine-readable save format for #101 gate evidence.\r\n\r\n## Durable storage\r\n\r\nEvidence remains on the existing append-only branch evidence/visual-verification.\r\nThe canonical set location is:\r\n\r\nevidence/visual-rebuild/issue-<issue_number>/<evidence_set_id>/\r\n\r\nEach set stores raw artifacts plus:\r\n\r\n- evidence-set.json conforming to $defs.evidenceSet\r\n- gate-record.json conforming to $defs.gateRecord\r\n- evidence-set-index.json generated/read back by the existing Fenced Gateway\r\n\r\nNo new evidence repository or competing SSOT is introduced.\r\n\r\n## PASS invariant\r\n\r\nA Gate Record may say PASS only when:\r\n\r\n1. the Evidence Set is complete,\r\n2. exact_head_verified=true,\r\n3. the Evidence Set implementation HEAD equals the exact evaluated implementation HEAD,\r\n4. blocking_gaps is empty.\r\n\r\nIf implementation HEAD changes after capture, create a new Evidence Set and Gate Record. Never overwrite an adopted or durable set.\r\n\r\n## Required evidence content\r\n\r\nThe contract covers Target identity, Target/Actual images, overlay or diff, landmark measurements, silhouette metrics, human visual ratings, exact implementation HEAD, device/profile, canonical viewport, verdict, residual gaps and timestamp.\r\n\r\nThe raw artifact names enforced by the current Gateway remain authoritative. This schema adds machine-readable metadata and gate-decision structure around that existing storage path.\r\n",
+    "path": "prototypes/target-image-threejs/verification/README.md"
+  },
+  "request_id": "control-fallback-worker-c-20260923T051722Z-t023-readme",
+  "request_sha256": "0265c4fd4ce6ff88b32ff819de172b142d622de241e7969a4b9ee09a8e71fecd",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
