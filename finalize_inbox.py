@@ -122,7 +122,7 @@ def supersede_old_lease_lifecycle() -> int:
         entries = []
         for path in sorted((ROOT / "requests" / lane).glob("*.json")):
             try:
-                obj = json.loads(path.read_text(encoding="utf-8"))
+                obj = json.loads(path.read_text(encoding="utf-8-sig"))
             except Exception:
                 continue
             op = obj.get("operation_type")
@@ -164,7 +164,7 @@ def main() -> None:
     for path in sorted(ROOT.glob("inbox/*/*.json")):
         lane = path.parent.name
         try:
-            draft = json.loads(path.read_text(encoding="utf-8"))
+            draft = json.loads(path.read_text(encoding="utf-8-sig"))
             request_id = str(draft.get("request_id") or "")
             if lane != draft.get("lane_id"):
                 raise ValueError(f"lane/path mismatch: {path}")
