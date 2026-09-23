@@ -1,0 +1,49 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-c-20260923T181600Z-t018-complete",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-c-20260923T180700Z-t018",
+  "lease_epoch":0,
+  "operation_id":"worker-c-20260923T181600Z-t018-complete-op",
+  "operation_type":"TASK_COMPLETE",
+  "expected_lane_head":"2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+  "work_context":{
+    "issue_number":132,
+    "task_id":"T018",
+    "worker_id":"C",
+    "owner_run_id":"worker-c-20260923T180700Z-t018",
+    "claim_generation":1,
+    "operation_id":"worker-c-20260923T181600Z-t018-complete-op",
+    "work_phase":"COMPLETION_SUBMITTED",
+    "submitted_payload_reference":"inbox/visual-rebuild/worker-c-20260923T181600Z-t018-complete.json",
+    "expected_head":"2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+    "last_progress_at":"2026-09-23T18:16:00Z",
+    "next_recovery_action":"RECONCILE_TASK_COMPLETE"
+  },
+  "payload":{
+    "issue_number":132,
+    "task_id":"T018",
+    "worker_id":"C",
+    "claim_generation":1,
+    "exact_head":"2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+    "summary":"T018 defines two deterministic non-canonical verification views as symmetric +/-30 degree Y-orbits from the fixed canonical camera; exact-head validation PASS",
+    "acceptance":{
+      "schema":"LQ_TASK_ACCEPTANCE:v1",
+      "task_id":"T018",
+      "evaluator_id":"T018_ADDITIONAL_VERIFICATION_VIEWS_V1",
+      "result":"PASS",
+      "accepted_head":"2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+      "runtime_config":{
+        "platform":"GitHub exact-head evaluator",
+        "command":"validate exactly two views; symmetric +/-30 degree Y-orbits; preserved canonical target/up/fov/aspect; 941x1672 DPR1; deterministic expected camera positions"
+      },
+      "evidence_artifacts":[{
+        "kind":"additional-verification-views",
+        "uri":"repo://nisiyasu/-luke-quest@2ddebbe1a00f27f90828e747c4c4626c9b1f147d/prototypes/target-image-threejs/verification/additional-verification-views-v1.json",
+        "sha256":"aaeed6d6aaa17f5e134f451b5d78f1b2af23c47ec1b387a77137dda5f01b14a3"
+      }],
+      "evaluated_at":"2026-09-23T18:16:00Z"
+    }
+  },
+  "created_at":"2026-09-23T18:16:00Z"
+}
