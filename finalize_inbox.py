@@ -27,7 +27,13 @@ def mutation_from_draft(draft: dict) -> dict:
         raise ValueError("operation_type not allowlisted")
     payload = dict(draft.get("payload") or {})
     if draft.get("operation_type") in {"LEASE_ACQUIRE", "LEASE_HEARTBEAT"}:
-        payload["ttl_seconds"] = 600
+        if lane == "visual-rebuild":
+            requested_ttl = int(payload.get("ttl_seconds", 600))
+            if requested_ttl < 60 or requested_ttl > 600:
+                raise ValueError("visual-rebuild ttl_seconds must be 60..600")
+            payload["ttl_seconds"] = requested_ttl
+        else:
+            payload["ttl_seconds"] = 600
 
     out = {
         "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
