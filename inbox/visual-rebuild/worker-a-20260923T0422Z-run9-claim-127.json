@@ -1,0 +1,15 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-a-20260923T0422Z-run9-claim-127",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "worker-a-20260923T0422Z-run9",
+  "lease_epoch": 30,
+  "operation_id": "worker-a-20260923T0422Z-run9-claim-127-op",
+  "operation_type": "ISSUE_COMMENT",
+  "expected_lane_head": "21e8130cf19abef563165ec7c61bbdc13f554e48",
+  "payload": {
+    "issue_number": 127,
+    "body": "LQ_WORKER_CLAIM:v1\nWORKER_ID=A\nOWNER_RUN_ID=worker-a-20260923T0422Z-run9\nCLAIMED_AT=2026-09-23T04:24:10Z\nCLAIM_UNTIL=2026-09-23T06:24:10Z\nISSUE=127"
+  },
+  "created_at": "2026-09-23T04:24:10Z"
+}
