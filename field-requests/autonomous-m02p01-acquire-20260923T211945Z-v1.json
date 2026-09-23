@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-09-23T21:19:45Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "field",
+  "lease_epoch": 0,
+  "operation_id": "op-autonomous-m02p01-acquire-20260923T211945Z-v1",
+  "operation_type": "LEASE_ACQUIRE",
+  "owner_run_id": "scheduled-build-loop-20260923T211945Z",
+  "payload": {
+    "ttl_seconds": 600
+  },
+  "request_id": "autonomous-m02p01-acquire-20260923T211945Z-v1",
+  "request_sha256": "989c1d37003221415982096a651ae7e07ab6c1be9cee45df917ee1423ceee5d6",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
