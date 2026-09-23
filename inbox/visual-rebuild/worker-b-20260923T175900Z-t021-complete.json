@@ -1,0 +1,13 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-b-20260923T175900Z-t021-complete",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-b-20260923T174950Z-t021",
+  "lease_epoch":0,
+  "operation_id":"worker-b-20260923T175900Z-t021-complete-op",
+  "operation_type":"TASK_COMPLETE",
+  "expected_lane_head":"f319ec08a886aa079241ff3124f88845ecacb0e4",
+  "payload":{"acceptance":{"accepted_head":"f319ec08a886aa079241ff3124f88845ecacb0e4","evaluated_at":"2026-09-23T17:59:00Z","evaluator_id":"T021_LANDMARK_MEASUREMENT_V1","evidence_artifacts":[{"kind":"landmark-measurement-v1.mjs","sha256":"7c3d71542851a8b8f59380f539ee3a1449304d8bfa6b7182f38d6fe12af8df95","uri":"github://nisiyasu/-luke-quest@f319ec08a886aa079241ff3124f88845ecacb0e4/prototypes/target-image-threejs/verification/landmark-measurement-v1.mjs"}],"result":"PASS","runtime_config":{"status":"LANDMARK_MEASUREMENT_PASS","viewport":{"width":941,"height":1672,"dpr":1},"measurement_count":22,"all_measurements_normalized":true,"p0_count":7,"p1_count":7,"p2_count":8,"output":"evidence-local/t021-applied.json"},"schema":"LQ_TASK_ACCEPTANCE:v1","task_id":"T021"},"claim_generation":1,"exact_head":"f319ec08a886aa079241ff3124f88845ecacb0e4","issue_number":135,"summary":"T021 accepted: exact-head landmark measurement emits normalized center, ROI center, size, reference lines and depth intent for all 22 landmarks at canonical 941x1672 DPR1.","task_id":"T021","worker_id":"B"},
+  "work_context":{"work_phase":"COMPLETION_SUBMITTED","owner_run_id":"worker-b-20260923T174950Z-t021","worker_id":"B","issue_number":135,"task_id":"T021","claim_generation":1,"operation_id":"worker-b-20260923T175900Z-t021-complete-op","submitted_payload_reference":"inbox/visual-rebuild/worker-b-20260923T175900Z-t021-complete.json","expected_head":"f319ec08a886aa079241ff3124f88845ecacb0e4","last_progress_at":"2026-09-23T17:59:00Z","next_recovery_action":"RECONCILE_TASK_COMPLETE"},
+  "created_at":"2026-09-23T17:59:00Z"
+}
