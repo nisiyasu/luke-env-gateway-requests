@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-09-23T17:19:20Z",
+  "expected_lane_head": "c09fdcdcaab7104605e83c966d060411f00bfe30",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-a-20260923T172100Z-run14-t022-complete-op",
+  "operation_type": "TASK_COMPLETE",
+  "owner_run_id": "worker-a-20260923T170900Z-run14-t022",
+  "payload": {
+    "acceptance": {
+      "accepted_head": "c09fdcdcaab7104605e83c966d060411f00bfe30",
+      "evaluated_at": "2026-09-23T17:19:20Z",
+      "evaluator_id": "INFRASTRUCTURE_TEST_V1",
+      "evidence_artifacts": [
+        {
+          "kind": "test-source",
+          "sha256": "e8b9784be7b55fcea9b87b3e3dec860f3c49b7b0e4cf6d5b3c238784ebf9377b",
+          "uri": "repo://nisiyasu/-luke-quest@c09fdcdcaab7104605e83c966d060411f00bfe30/prototypes/target-image-threejs/verification/silhouette-iou-v1.test.mjs"
+        },
+        {
+          "kind": "acceptance-contract",
+          "sha256": "89e25a4a2f73d2ff484666a281f0b4b115ac7026c81409d0fc0be614fa2fbb62",
+          "uri": "repo://nisiyasu/-luke-quest@c09fdcdcaab7104605e83c966d060411f00bfe30/prototypes/target-image-threejs/verification/T022_ACCEPTANCE.md"
+        }
+      ],
+      "result": "PASS",
+      "runtime_config": {
+        "command": "node prototypes/target-image-threejs/verification/silhouette-iou-v1.test.mjs",
+        "platform": "MSI worker A"
+      },
+      "schema": "LQ_TASK_ACCEPTANCE:v1",
+      "task_id": "T022"
+    },
+    "claim_generation": 1,
+    "exact_head": "c09fdcdcaab7104605e83c966d060411f00bfe30",
+    "issue_number": 136,
+    "summary": "T022 deterministic silhouette mask IoU measurement implemented and 7/7 tests PASS",
+    "task_id": "T022",
+    "worker_id": "A"
+  },
+  "request_id": "worker-a-20260923T172100Z-run14-t022-complete",
+  "request_sha256": "cbf18804a73c92b4bfe90f284023c95050cea92bc090183a17aec3cb4ce97532",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
+  "work_context": {
+    "claim_generation": 1,
+    "expected_head": "c09fdcdcaab7104605e83c966d060411f00bfe30",
+    "issue_number": 136,
+    "last_progress_at": "2026-09-23T17:19:20Z",
+    "next_recovery_action": "RECONCILE_TASK_COMPLETE",
+    "operation_id": "worker-a-20260923T172100Z-run14-t022-complete-op",
+    "owner_run_id": "worker-a-20260923T170900Z-run14-t022",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-a-20260923T172100Z-run14-t022-complete.json",
+    "task_id": "T022",
+    "work_phase": "COMPLETION_SUBMITTED",
+    "worker_id": "A"
+  }
+}
