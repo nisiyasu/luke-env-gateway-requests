@@ -1,0 +1,19 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "livefire-b-20260923T135832Z-t016-claim",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "livefire-b-20260923T135832Z-t016",
+  "lease_epoch": 0,
+  "operation_id": "livefire-b-20260923T135832Z-t016-claim-op",
+  "operation_type": "WORK_CLAIM_ACQUIRE",
+  "expected_lane_head": null,
+  "payload": {
+    "issue_number": 130,
+    "task_id": "T016",
+    "worker_id": "B",
+    "claim_ttl_seconds": 1800,
+    "progress_deadline_seconds": 600,
+    "max_recovery_attempts": 2
+  },
+  "created_at": "2026-09-23T13:58:32.236786Z"
+}
