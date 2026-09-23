@@ -1,0 +1,53 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-a-20260923T184400Z-t024-complete",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-a-20260923T183800Z-t024",
+  "lease_epoch":0,
+  "operation_id":"worker-a-20260923T184400Z-t024-complete-op",
+  "operation_type":"TASK_COMPLETE",
+  "expected_lane_head":"2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+  "work_context":{
+    "issue_number":141,
+    "task_id":"T024",
+    "worker_id":"A",
+    "owner_run_id":"worker-a-20260923T183800Z-t024",
+    "claim_generation":1,
+    "operation_id":"worker-a-20260923T184400Z-t024-complete-op",
+    "work_phase":"COMPLETION_SUBMITTED",
+    "submitted_payload_reference":"inbox/visual-rebuild/worker-a-20260923T184400Z-t024-complete.json",
+    "expected_head":"2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+    "last_progress_at":"2026-09-23T18:44:00Z",
+    "next_recovery_action":"RECONCILE_TASK_COMPLETE"
+  },
+  "payload":{
+    "issue_number":141,
+    "task_id":"T024",
+    "worker_id":"A",
+    "claim_generation":1,
+    "exact_head":"2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+    "summary":"T024 audit executed at exact HEAD. G0 gate finding is FAIL/NOT_YET_COMPLETE because the T023 contract requires an adopted Evidence Set + Gate Record under evidence/visual-rebuild/issue-*/<evidence_set_id>/, but no evidence/visual-rebuild root exists on evidence/visual-verification. Fresh canonical capture itself passed at 941x1672 DPR1 with runtime=ready and zero page errors; overlay/diff generation passed and measured changedPixelRatio=0.9992741611540202, MAE=169.94190068931385. This completes the audit task, not the G0 gate.",
+    "acceptance":{
+      "schema":"LQ_TASK_ACCEPTANCE:v1",
+      "task_id":"T024",
+      "evaluator_id":"T024_G0_EXACT_HEAD_AUDIT_V1",
+      "result":"PASS",
+      "accepted_head":"2ddebbe1a00f27f90828e747c4c4626c9b1f147d",
+      "runtime_config":{
+        "platform":"MSI C:\\luke-loop-a + GitHub exact-head readback",
+        "command":"Fresh exact-head readback of G0 artifacts and T023 evidence contract; canonical runtime capture 941x1672 DPR1; overlay/diff generation; evidence/visual-verification lookup",
+        "gate_verdict":"FAIL_NOT_YET_COMPLETE",
+        "capture_result":"PASS width=941 height=1672 DPR=1 runtime=ready pageErrors=0",
+        "overlay_diff_result":"PASS changedPixelRatio=0.9992741611540202 meanAbsoluteError=169.94190068931385",
+        "blocking_finding":"Formal adopted G0 Evidence Set/Gate Record is absent from evidence/visual-verification"
+      },
+      "evidence_artifacts":[
+        {"kind":"g0-reference-set","uri":"repo://nisiyasu/-luke-quest@2ddebbe1a00f27f90828e747c4c4626c9b1f147d/docs/autonomy/evidence/T013_G0_REFERENCE_SET_v1.md","sha256":"f7ac7cf048e3a3029bbf1cb01c6b1fcc9dc72a2d5bee6fb03e6e11626a597364"},
+        {"kind":"visual-evidence-contract","uri":"repo://nisiyasu/-luke-quest@2ddebbe1a00f27f90828e747c4c4626c9b1f147d/prototypes/target-image-threejs/verification/visual-evidence-contract-v1.schema.json","sha256":"e8aba0350967d27ddcd54ae946230883d97dff3b6fd7001182f2a75b4efcf791"},
+        {"kind":"additional-verification-views","uri":"repo://nisiyasu/-luke-quest@2ddebbe1a00f27f90828e747c4c4626c9b1f147d/prototypes/target-image-threejs/verification/additional-verification-views-v1.json","sha256":"c70c7567b7755833d9442fc89e74b26049f7a41ed1582dd1bfda53042a769610"}
+      ],
+      "evaluated_at":"2026-09-23T18:44:00Z"
+    }
+  },
+  "created_at":"2026-09-23T18:44:00Z"
+}
