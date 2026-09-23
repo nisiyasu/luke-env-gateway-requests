@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-09-23T04:05:59Z",
+  "expected_lane_head": "21e8130cf19abef563165ec7c61bbdc13f554e48",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 29,
+  "operation_id": "control-t012-final-20260923T040504Z-worklog-op",
+  "operation_type": "ISSUE_COMMENT",
+  "owner_run_id": "control-t012-final-20260923T040504Z",
+  "payload": {
+    "body": "T012 WORK LOG / non-destructive rollback proof\nTASK_ID=T012\nCONTROL_RUN_ID=control-t012-final-20260923T040504Z\nIMPLEMENTATION_BRANCH=experiment/target-image-threejs-v1\nIMPLEMENTATION_HEAD_BEFORE=21e8130cf19abef563165ec7c61bbdc13f554e48\nARCHIVE_BRANCH=archive/pre-target-image-rebuild-20260921\nARCHIVE_SHA=540e33b2c98d06d6140c9a768abef03954d46ca8\nTEST_METHOD=Temporary detached git worktree only. Reset temporary worktree from implementation HEAD to archive SHA. Production branches were not moved.\nROLLBACK_HEAD_AFTER=540e33b2c98d06d6140c9a768abef03954d46ca8\nROLLBACK_CLEAN=true\nOLD_INDEX_AFTER=true\nNEW_IMPLEMENTATION_ROOT_AFTER=false\nROLLBACK_TREE_SHA=3a8ed006ee680e42bca6db17a758f40ea5b766cf\nARCHIVE_TREE_SHA=3a8ed006ee680e42bca6db17a758f40ea5b766cf\nREMOTE_IMPLEMENTATION_HEAD_AFTER=21e8130cf19abef563165ec7c61bbdc13f554e48\nREMOTE_BRANCH_UNCHANGED=true\nCOMMANDS=git worktree add --detach <temp> <implementation-head>; git reset --hard <archive-sha>; git status --porcelain; git rev-parse HEAD^{tree}; remote ref readback\nRESULT=PASS",
+    "issue_number": 125
+  },
+  "request_id": "control-t012-final-20260923T040504Z-worklog",
+  "request_sha256": "f553f5eb77fcc0ee50c7bd9fe4e6218b7a0468b9fd118b93cd03c5678a1511da",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
