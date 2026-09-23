@@ -1,0 +1,6 @@
+{
+  "error": "visual-rebuild ttl_seconds must be 60..600",
+  "error_type": "ValueError",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_DRAFT_REJECTION:v1",
+  "source_path": "inbox/visual-rebuild/worker-b-nativewrite-20260923T054300Z-lease.json"
+}
