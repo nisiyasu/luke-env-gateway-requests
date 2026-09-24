@@ -1,0 +1,16 @@
+{
+  "schema": "LUKE_QUEST_CANONICAL_FIELD_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "m02p01-close-20260925T0627JST",
+  "lane_id": "field",
+  "owner_run_id": "CHAT-EVIDENCE-REPAIR-20260925",
+  "lease_epoch": 63,
+  "operation_id": "m02p01-close-20260925T0627JST-op",
+  "operation_type": "CURRENT_PACKET_STATE",
+  "expected_lane_head": "5fd6688514b4aa5705cd18279f91916bff7f2264",
+  "payload": {
+    "issue_number": 28,
+    "state": "closed",
+    "evidence_comment_operation_id": "m02p01-evidence-comment-20260925T0627JST-op"
+  },
+  "created_at": "2026-09-24T21:27:10Z"
+}
