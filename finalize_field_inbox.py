@@ -20,6 +20,7 @@ ALLOWED_OPS = {
     "ROUTER_ASSERT",
     "CURRENT_PACKET_STATE",
     "ROUTER_UPDATE",
+    "EVIDENCE_WORKFLOW_DISPATCH",
 }
 REQUEST_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$")
 
