@@ -1,0 +1,15 @@
+{
+  "schema": "LUKE_QUEST_CANONICAL_FIELD_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "manual-evidence-dispatch-20260925T0617JST",
+  "lane_id": "field",
+  "owner_run_id": "CHAT-EVIDENCE-REPAIR-20260925",
+  "lease_epoch": 63,
+  "operation_id": "manual-evidence-dispatch-20260925T0617JST-op",
+  "operation_type": "EVIDENCE_WORKFLOW_DISPATCH",
+  "expected_lane_head": "5fd6688514b4aa5705cd18279f91916bff7f2264",
+  "payload": {
+    "workflow": "m02-p01-visible-evidence.yml",
+    "expected_current_packet_issue": 28
+  },
+  "created_at": "2026-09-24T21:17:00Z"
+}
