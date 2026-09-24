@@ -1,0 +1,15 @@
+{
+  "schema": "LUKE_QUEST_CANONICAL_FIELD_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "m02p01-evidence-comment-20260925T0627JST",
+  "lane_id": "field",
+  "owner_run_id": "CHAT-EVIDENCE-REPAIR-20260925",
+  "lease_epoch": 63,
+  "operation_id": "m02p01-evidence-comment-20260925T0627JST-op",
+  "operation_type": "ISSUE_COMMENT",
+  "expected_lane_head": "5fd6688514b4aa5705cd18279f91916bff7f2264",
+  "payload": {
+    "issue_number": 28,
+    "body": "[LQ_GATEWAY_OP:m02p01-evidence-comment-20260925T0627JST-op]\\n\\nM02-P01 runtime evidence re-gate: PASS.\\n\\n- implementation HEAD: `5fd6688514b4aa5705cd18279f91916bff7f2264`\\n- GitHub Actions run: `36059854184` / M02 P01 Visible Runtime Evidence / conclusion=success\\n- artifact: `10833967344` / `m02-p01-visible-5fd6688514b4aa5705cd18279f91916bff7f2264`\\n- 390x844 capture: visible, non-black; local RDC liveness PASS (mean luminance 85.02, near-black ratio 0.0978)\\n- 864x1536 capture: visible, non-black; local RDC liveness PASS (mean luminance 85.502, near-black ratio 0.069282)\\n- runtime readiness: m02=pass, m03=pass, scene=ready at both viewports\\n- visual review: bridge/river/forest/player/HUD are materially visible; black-capture failure is repaired.\\n- RDC diagnosis found many stale local listeners on port 8140; after killing stale listeners and binding a clean server to the exact worktree, local exact-HEAD captures reproduced PASS.\\n- attempted workflow-dispatch gateway extension hit expected credential boundary `403 Resource not accessible by integration`; reviewed and fail-closed. Push-triggered workflow plus RDC/local capture remains the evidence route.\\n\\nM02-P01 acceptance evidence is now satisfied for the black-screen/capture gate. Owner subjective experience and physical iPhone verification remain separate downstream gates and are not manufactured here."
+  },
+  "created_at": "2026-09-24T21:27:00Z"
+}
