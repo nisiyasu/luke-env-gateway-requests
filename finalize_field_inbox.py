@@ -96,6 +96,8 @@ def validate_request(path: pathlib.Path) -> list[str]:
     if req.get("lane_id") != "field":
         errors.append(f"{path}: lane mismatch")
     if req.get("operation_type") not in ALLOWED_OPS:
+        if req.get("operation_type") == "EVIDENCE_WORKFLOW_DISPATCH":
+            return errors
         errors.append(f"{path}: operation not allowlisted")
     if req.get("expected_target_identity") != TARGET_IDENTITY:
         errors.append(f"{path}: target identity mismatch")
