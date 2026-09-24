@@ -1,0 +1,17 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-c-20260924T170336Z-t032-takeover",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "worker-c-20260924T170336Z-t032",
+  "lease_epoch": 0,
+  "operation_id": "worker-c-20260924T170336Z-t032-takeover-op",
+  "operation_type": "WORK_CLAIM_TAKEOVER",
+  "expected_lane_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+  "payload": {
+    "issue_number": 160,
+    "task_id": "T032",
+    "worker_id": "C",
+    "worker_capabilities": ["STANDARD"]
+  },
+  "created_at": "2026-09-24T17:03:36Z"
+}
