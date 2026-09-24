@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-09-24T21:29:00Z",
+  "expected_lane_head": null,
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "field",
+  "lease_epoch": 0,
+  "operation_id": "m02p01-reacquire-20260925T0629JST-op",
+  "operation_type": "LEASE_ACQUIRE",
+  "owner_run_id": "CHAT-EVIDENCE-REPAIR-20260925",
+  "payload": {
+    "ttl_seconds": 600
+  },
+  "request_id": "m02p01-reacquire-20260925T0629JST",
+  "request_sha256": "019cdd0bd1da358fae1086c47d06d14b03119f58b8f0a38edb78bbd207325f27",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
