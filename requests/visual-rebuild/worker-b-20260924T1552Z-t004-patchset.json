@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-09-24T15:52:00Z",
+  "expected_lane_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-b-20260924T1552Z-t004-patchset-op",
+  "operation_type": "IMPLEMENTATION_PATCHSET",
+  "owner_run_id": "worker-b-20260924T1549Z-t004",
+  "payload": {
+    "claim_generation": 1,
+    "files": [
+      {
+        "content": "# 最新現状開発手順 v1 / LUKE Visual Rebuild\n\nこのfeatureの正式工程を以下に固定する。\n\n## A. 前段設計\n1. Owner要望・Reference画像\n2. 要件定義\n3. 敵対レビュー / 穴埋め\n4. Owner-approved baseline / FREEZE候補\n5. `speckit.constitution`\n6. `speckit.specify`\n7. `speckit.clarify`\n8. `speckit.plan`\n9. `speckit.checklist`\n10. `speckit.tasks`\n11. `speckit.analyze`\n\n## B. Task→GitHub Work Graph移行\n12. `speckit.taskstoissues`\n13. Parent Issue作成\n14. GitHub Sub-issues / サブイシューで縦方向分解\n15. GitHub Issue Dependencies / イシュー依存関係で横方向依存を登録\n16. GitHub Projects v2へ投影\n17. Projects v2 fields / views / Ready条件を設定\n18. Requirement→Spec→Plan→Task→Issue coverage監査\n\n## C. 必要なSpec Kit Extension\n19. Coreだけでは表現できないGitHub native投影をExtensionとして定義する\n20. ExtensionはSub-issues / Dependencies / Projects v2投影を自動化してよいが、IssueをWork SSOTとするauthorityを変更しない\n21. Extensionの入力・出力・idempotency・dry-run・再実行性を検証する\n22. ExtensionによるIssue Graphがtasks.md / analyze.mdと100%整合することを確認する\n\n## D. Agent実装\n23. Ready IssueをAgentがpull\n24. claim / lease / branch・worktree分離\n25. implementation\n26. tests\n27. visual/performance evidence\n28. review\n29. fix loop\n30. PR\n31. merge\n32. Issue close / Parent progress\n\n## E. Converge / 最終収束\n33. `speckit.converge`\n34. Source Requirement→Spec→Plan→Tasks→Issues→Implementation→Evidenceの収束監査\n35. drift / missing implementation / orphan task / orphan issue / false PASSを0件化\n36. 不足があればTask追加→Issue追加→再実装\n37. 再Converge\n38. Owner final gate\n\n## Authority\n- GitHub Issues: Work SSOT\n- Sub-issues: vertical decomposition\n- Issue Dependencies: horizontal dependency\n- Projects v2: management/control view\n- PR/Commit/CI/Evidence: implementation truth\n- Spec Kit artifacts: planning/decomposition source\n- Converge: final consistency/coverage extension\n\n## 補助\nGitHub Copilot Project Planningは、Spec Kit後の細分化補助として利用可能。ただしSpec Kit artifacts / GitHub native relationsを上書きする正本にはしない。\n\n## Current execution boundary / 今回の停止点\n\nOwner指示により、この実行は **Step 22: ExtensionによるIssue Graphがtasks.md / analyze.mdと100%整合することの確認** まで進める。\n\n- Step 23以降のAgent実装はこの実行では開始しない。\n- 旧視覚実装の削除、implementation branchでのゲームコード変更も開始しない。\n- Archive/rebuild方針は設計・Issueへ固定するが、実際の削除は実装フェーズ開始時にrollback point確認後に行う。\n",
+        "path": "specs/001-target-image-threejs/DEVELOPMENT_PIPELINE_v1.md"
+      },
+      {
+        "content": "{\n  \"schema\": \"LQ_INFRASTRUCTURE_TEST_EVIDENCE:v1\",\n  \"task_id\": \"T004\",\n  \"evaluator_id\": \"INFRASTRUCTURE_TEST_V1\",\n  \"result\": \"PASS\",\n  \"check\": \"DEVELOPMENT_PIPELINE_v1.md copied byte-for-text from SPEC_COMMIT authority\",\n  \"spec_commit\": \"88694c2812c18938c8d72db3c5933b3efba2e428\",\n  \"source_blob_sha\": \"91fb318eff9381e000036c423e85ea1802f4ec38\",\n  \"path\": \"specs/001-target-image-threejs/DEVELOPMENT_PIPELINE_v1.md\"\n}\n",
+        "path": "specs/001-target-image-threejs/evidence/t004-infrastructure-test-v1.json"
+      }
+    ],
+    "issue_number": 152,
+    "task_id": "T004",
+    "worker_id": "B"
+  },
+  "request_id": "worker-b-20260924T1552Z-t004-patchset",
+  "request_sha256": "d8c47a6916a106763b18cff4ca24c9fe3c43039e06986ada60205308d595c028",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
+  "work_context": {
+    "claim_generation": 1,
+    "expected_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+    "issue_number": 152,
+    "last_progress_at": "2026-09-24T15:52:00Z",
+    "next_recovery_action": "RECONCILE_PATCHSET_RECEIPT",
+    "operation_id": "worker-b-20260924T1552Z-t004-patchset-op",
+    "owner_run_id": "worker-b-20260924T1549Z-t004",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-b-20260924T1552Z-t004-patchset.json",
+    "task_id": "T004",
+    "work_phase": "PATCHSET_SUBMITTED",
+    "worker_id": "B"
+  }
+}
