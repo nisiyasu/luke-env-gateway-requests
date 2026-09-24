@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-09-24T21:37:00Z",
+  "expected_lane_head": "5fd6688514b4aa5705cd18279f91916bff7f2264",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "field",
+  "lease_epoch": 64,
+  "operation_id": "router-m03p01-advance-20260925T0637JST-op",
+  "operation_type": "ROUTER_UPDATE",
+  "owner_run_id": "CHAT-EVIDENCE-REPAIR-20260925",
+  "payload": {
+    "body": "<!-- WORK_PACKET_ROUTER:v1 -->\nPROGRAM_ID: LQ-MODERN-3D-VISUAL-PROTOTYPE-20260911-V2\nPARENT_ISSUE: #12\nCURRENT_STAGE: M03\nCURRENT_PACKET_ID: M03-P01\nCURRENT_PACKET_ISSUE: #29\nNEXT_PACKET_ID: M03-P02\nSTATUS: ACTIVE\nROUTER_VERSION: v1\nLAST_TRANSITION: M02-P01 #28 black-capture failure repaired and closed after exact-HEAD evidence at `5fd6688514b4aa5705cd18279f91916bff7f2264`. GitHub Actions run `36059854184` completed SUCCESS with artifact `10833967344`; 390x844 and 864x1536 rendered-world PNGs are visibly non-black, runtime readiness reports m02=pass / m03=pass / scene=ready, and independent RDC liveness checks PASS. Route forward to M03-P01 #29 for coordinate-lock macro composition. OWNER_EXPERIENCE_PASS: PENDING. IOS_PHYSICAL_VERIFICATION: PENDING.",
+    "expected_current_packet_issue": 28,
+    "expected_router_body_sha256": "1ef54674e488a4d7fc1ce2373bc81d1c8224a46d1a88f511c43dba8122d2e076",
+    "transition_type": "PASS_ADVANCE"
+  },
+  "request_id": "router-m03p01-advance-20260925T0637JST",
+  "request_sha256": "fccc907b0032431a78f76fb96fadeeafe5511896948723c8abf044bbc9c700ce",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
