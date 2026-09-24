@@ -1,0 +1,54 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-a-20260924T161900Z-t001-complete",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "worker-a-20260924T161500Z-t001",
+  "lease_epoch": 0,
+  "operation_id": "worker-a-20260924T161900Z-t001-complete-op",
+  "operation_type": "TASK_COMPLETE",
+  "expected_lane_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+  "payload": {
+    "issue_number": 149,
+    "task_id": "T001",
+    "worker_id": "A",
+    "claim_generation": 1,
+    "exact_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+    "summary": "T001 verified the immutable Owner requirements source already exists at the #101 pinned SPEC_COMMIT with stable repository path and blob identity; no implementation mutation is required.",
+    "acceptance": {
+      "schema": "LQ_TASK_ACCEPTANCE:v1",
+      "task_id": "T001",
+      "evaluator_id": "INFRASTRUCTURE_TEST_V1",
+      "result": "PASS",
+      "accepted_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+      "runtime_config": {
+        "method": "Fresh GitHub readback of pinned SPEC_COMMIT immutable source",
+        "spec_commit": "88694c2812c18938c8d72db3c5933b3efba2e428",
+        "path": "specs/001-target-image-threejs/source/OWNER_REQUIREMENTS_v1.0.md",
+        "blob_sha": "2d1db9c2db0e7b391b297ae374f9d8d2613cfc8e",
+        "size_bytes": 26666
+      },
+      "evidence_artifacts": [
+        {
+          "kind": "owner-requirements-source",
+          "uri": "repo://nisiyasu/-luke-quest@88694c2812c18938c8d72db3c5933b3efba2e428/specs/001-target-image-threejs/source/OWNER_REQUIREMENTS_v1.0.md",
+          "sha256": "f789954b90fba72ff781c3851223638f6dd93c4386961bcef5d006bb5bae143e"
+        }
+      ],
+      "evaluated_at": "2026-09-24T16:19:00Z"
+    }
+  },
+  "work_context": {
+    "work_phase": "COMPLETION_SUBMITTED",
+    "owner_run_id": "worker-a-20260924T161500Z-t001",
+    "worker_id": "A",
+    "claim_generation": 1,
+    "operation_id": "worker-a-20260924T161900Z-t001-complete-op",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-a-20260924T161900Z-t001-complete.json",
+    "expected_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+    "last_progress_at": "2026-09-24T16:19:00Z",
+    "next_recovery_action": "RECONCILE_TASK_COMPLETE",
+    "issue_number": 149,
+    "task_id": "T001"
+  },
+  "created_at": "2026-09-24T16:19:00Z"
+}
