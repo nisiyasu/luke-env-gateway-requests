@@ -1,0 +1,30 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-b-20260924T1555Z-t004-complete",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-b-20260924T1549Z-t004",
+  "lease_epoch":0,
+  "operation_id":"worker-b-20260924T1555Z-t004-complete-op",
+  "operation_type":"TASK_COMPLETE",
+  "expected_lane_head":"6ce965c96a09d965d9c7c65302b27340b127d0b6",
+  "payload":{
+    "issue_number":152,
+    "task_id":"T004",
+    "worker_id":"B",
+    "claim_generation":1,
+    "exact_head":"6ce965c96a09d965d9c7c65302b27340b127d0b6",
+    "summary":"T004 verified the pinned SPEC_COMMIT contains DEVELOPMENT_PIPELINE_v1.md as the durable engineering-process authority; no implementation-root mutation is required or permitted for this planning artifact.",
+    "acceptance":{
+      "schema":"LQ_TASK_ACCEPTANCE:v1",
+      "task_id":"T004",
+      "evaluator_id":"INFRASTRUCTURE_TEST_V1",
+      "result":"PASS",
+      "accepted_head":"6ce965c96a09d965d9c7c65302b27340b127d0b6",
+      "runtime_config":{"command":"GitHub fetch_file at pinned SPEC_COMMIT + git cat-file SHA256 verification","platform":"GitHub authority + MSI read-only verification"},
+      "evidence_artifacts":[{"kind":"planning-authority","uri":"repo://nisiyasu/-luke-quest@88694c2812c18938c8d72db3c5933b3efba2e428/specs/001-target-image-threejs/DEVELOPMENT_PIPELINE_v1.md","sha256":"971cdbc9f19c6e63d3c7859e0a53d5cf0df1d950de95f3ca204c7f267c00136c"}],
+      "evaluated_at":"2026-09-24T15:55:00Z"
+    }
+  },
+  "work_context":{"issue_number":152,"task_id":"T004","worker_id":"B","owner_run_id":"worker-b-20260924T1549Z-t004","claim_generation":1,"operation_id":"worker-b-20260924T1555Z-t004-complete-op","work_phase":"COMPLETION_SUBMITTED","submitted_payload_reference":"inbox/visual-rebuild/worker-b-20260924T1555Z-t004-complete.json","expected_head":"6ce965c96a09d965d9c7c65302b27340b127d0b6","last_progress_at":"2026-09-24T15:55:00Z","next_recovery_action":"RECONCILE_TASK_COMPLETE"},
+  "created_at":"2026-09-24T15:55:00Z"
+}
