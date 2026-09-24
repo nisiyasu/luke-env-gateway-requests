@@ -1,0 +1,56 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-c-20260924T154911Z-t029-complete",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "worker-c-20260924T1528Z-t029",
+  "lease_epoch": 0,
+  "operation_id": "worker-c-20260924T154911Z-t029-complete-op",
+  "operation_type": "TASK_COMPLETE",
+  "expected_lane_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+  "payload": {
+    "acceptance": {
+      "schema": "LQ_TASK_ACCEPTANCE:v1",
+      "task_id": "T029",
+      "evaluator_id": "INFRASTRUCTURE_TEST_V1",
+      "result": "PASS",
+      "accepted_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+      "runtime_config": {
+        "platform": "MSI Chrome headless exact-head evaluator",
+        "command": "python http.server 4173 + Python Playwright Chrome KTX2/Basis runtime readback",
+        "viewport": [
+          941,
+          1672
+        ],
+        "device_pixel_ratio": 1
+      },
+      "evidence_artifacts": [
+        {
+          "kind": "infrastructure-test",
+          "uri": "repo://nisiyasu/-luke-quest@6ce965c96a09d965d9c7c65302b27340b127d0b6/prototypes/target-image-threejs/verification/t029-infrastructure-test-v1.json",
+          "sha256": "44980dca940e0026ae6aa9e0c7d419eac10496f9b37df24d8ebf055a26ec8e2d"
+        }
+      ],
+      "evaluated_at": "2026-09-24T15:49:11Z"
+    },
+    "claim_generation": 1,
+    "exact_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+    "issue_number": 157,
+    "summary": "T029 verifies Three.js r180 KTX2Loader/Basis transcoding with a deterministic ETC1S KTX2 fixture at 941x1672/DPR1 on the exact applied HEAD, with zero meaningful runtime errors.",
+    "task_id": "T029",
+    "worker_id": "C"
+  },
+  "created_at": "2026-09-24T15:49:11Z",
+  "work_context": {
+    "issue_number": 157,
+    "task_id": "T029",
+    "worker_id": "C",
+    "owner_run_id": "worker-c-20260924T1528Z-t029",
+    "claim_generation": 1,
+    "operation_id": "worker-c-20260924T154911Z-t029-complete-op",
+    "work_phase": "COMPLETION_SUBMITTED",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-c-20260924T154911Z-t029-complete.json",
+    "expected_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+    "last_progress_at": "2026-09-24T15:49:11Z",
+    "next_recovery_action": "RECONCILE_TASK_COMPLETE"
+  }
+}
