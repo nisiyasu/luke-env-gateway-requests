@@ -1,0 +1,62 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-c-20260924T155835Z-t030-complete",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "worker-c-20260924T155104Z-t030",
+  "lease_epoch": 0,
+  "operation_id": "worker-c-20260924T155835Z-t030-complete-op",
+  "operation_type": "TASK_COMPLETE",
+  "expected_lane_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+  "payload": {
+    "acceptance": {
+      "schema": "LQ_TASK_ACCEPTANCE:v1",
+      "task_id": "T030",
+      "evaluator_id": "INFRASTRUCTURE_TEST_V1",
+      "result": "PASS",
+      "accepted_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+      "runtime_config": {
+        "platform": "MSI Chrome headless exact-head evaluator",
+        "command": "Python Playwright BrainStem Meshopt/Draco warm-decoder 3-sample comparison",
+        "viewport": [
+          941,
+          1672
+        ],
+        "device_pixel_ratio": 1,
+        "exact_head_observation": {
+          "meshopt_median_ms": 10.600000023841858,
+          "draco_median_ms": 46.200000047683716,
+          "ratio_meshopt_to_draco": 0.22943722971648134,
+          "runtime_errors": 0
+        }
+      },
+      "evidence_artifacts": [
+        {
+          "kind": "infrastructure-test",
+          "uri": "repo://nisiyasu/-luke-quest@f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a/prototypes/target-image-threejs/verification/t030-infrastructure-test-v1.json",
+          "sha256": "d8d0a91f8f5b8d81798eb09e9c8bc5ac39390343557010680e1b7229c79ab37e"
+        }
+      ],
+      "evaluated_at": "2026-09-24T15:58:35Z"
+    },
+    "claim_generation": 1,
+    "exact_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+    "issue_number": 158,
+    "summary": "T030 compares Meshopt and Draco decode/load time on the same BrainStem model after network prefetch and decoder warm-up; both paths decode successfully on the exact applied HEAD with three timed samples each.",
+    "task_id": "T030",
+    "worker_id": "C"
+  },
+  "created_at": "2026-09-24T15:58:35Z",
+  "work_context": {
+    "issue_number": 158,
+    "task_id": "T030",
+    "worker_id": "C",
+    "owner_run_id": "worker-c-20260924T155104Z-t030",
+    "claim_generation": 1,
+    "operation_id": "worker-c-20260924T155835Z-t030-complete-op",
+    "work_phase": "COMPLETION_SUBMITTED",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-c-20260924T155835Z-t030-complete.json",
+    "expected_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+    "last_progress_at": "2026-09-24T15:58:35Z",
+    "next_recovery_action": "RECONCILE_TASK_COMPLETE"
+  }
+}
