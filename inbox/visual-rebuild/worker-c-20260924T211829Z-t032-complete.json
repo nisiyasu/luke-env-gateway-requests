@@ -1,0 +1,56 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-c-20260924T211829Z-t032-complete",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "worker-c-20260924T211829Z-t032",
+  "lease_epoch": 0,
+  "operation_id": "worker-c-20260924T211829Z-t032-complete-op",
+  "operation_type": "TASK_COMPLETE",
+  "expected_lane_head": "7325610213b5ee1863ba9b2c986fe919a22b00f2",
+  "payload": {
+    "issue_number": 160,
+    "task_id": "T032",
+    "worker_id": "C",
+    "claim_generation": 4,
+    "exact_head": "7325610213b5ee1863ba9b2c986fe919a22b00f2",
+    "acceptance": {
+      "schema": "LQ_TASK_ACCEPTANCE:v1",
+      "task_id": "T032",
+      "evaluator_id": "INFRASTRUCTURE_TEST_V1",
+      "result": "PASS",
+      "accepted_head": "7325610213b5ee1863ba9b2c986fe919a22b00f2",
+      "runtime_config": {
+        "platform": "MSI Google Chrome exact-head evaluator",
+        "command": "python http.server 4173 + Python Playwright t032-runtime-test.py",
+        "viewport": [
+          941,
+          1672
+        ],
+        "device_pixel_ratio": 1
+      },
+      "evidence_artifacts": [
+        {
+          "kind": "infrastructure-test",
+          "uri": "repo://nisiyasu/-luke-quest@7325610213b5ee1863ba9b2c986fe919a22b00f2/prototypes/target-image-threejs/verification/t032-infrastructure-test-v1.json",
+          "sha256": "6a3f28cbb6a8975afe15dfe96ea10c7f8694c8c9bd12bd3929063c3471c55bb8"
+        }
+      ],
+      "evaluated_at": "2026-09-24T21:23:49Z"
+    },
+    "summary": "T032 verifies dynamic resolution and explicit low/medium/high quality preset switching on exact applied HEAD at 941x1672 DPR1. Drawing buffers read back as 470x836, 705x1254, and 941x1672; synthetic slow/fast frame thresholds select low/high; runtime errors are zero."
+  },
+  "work_context": {
+    "issue_number": 160,
+    "task_id": "T032",
+    "worker_id": "C",
+    "owner_run_id": "worker-c-20260924T211829Z-t032",
+    "claim_generation": 4,
+    "operation_id": "worker-c-20260924T211829Z-t032-complete-op",
+    "work_phase": "COMPLETION_SUBMITTED",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-c-20260924T211829Z-t032-complete.json",
+    "expected_head": "7325610213b5ee1863ba9b2c986fe919a22b00f2",
+    "last_progress_at": "2026-09-24T21:23:49Z",
+    "next_recovery_action": "RECONCILE_TASK_COMPLETE"
+  },
+  "created_at": "2026-09-24T21:23:49Z"
+}
