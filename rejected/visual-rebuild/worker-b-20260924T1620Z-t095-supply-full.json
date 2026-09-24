@@ -1,0 +1,6 @@
+{
+  "error": "operation_type not allowlisted",
+  "error_type": "ValueError",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_DRAFT_REJECTION:v1",
+  "source_path": "inbox/visual-rebuild/worker-b-20260924T1620Z-t095-supply-full.json"
+}
