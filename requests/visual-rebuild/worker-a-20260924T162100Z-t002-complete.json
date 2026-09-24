@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-09-24T16:21:00Z",
+  "expected_lane_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-a-20260924T162100Z-t002-complete-op",
+  "operation_type": "TASK_COMPLETE",
+  "owner_run_id": "worker-a-20260924T162000Z-t002",
+  "payload": {
+    "acceptance": {
+      "accepted_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+      "evaluated_at": "2026-09-24T16:21:00Z",
+      "evaluator_id": "INFRASTRUCTURE_TEST_V1",
+      "evidence_artifacts": [
+        {
+          "kind": "requirements-traceability",
+          "sha256": "66a26f92e8e0191e0160c90659bc298eaa3840e0454fdce21f53279f6736f7c0",
+          "uri": "repo://nisiyasu/-luke-quest@88694c2812c18938c8d72db3c5933b3efba2e428/specs/001-target-image-threejs/traceability.md"
+        }
+      ],
+      "result": "PASS",
+      "runtime_config": {
+        "coverage_count": 82,
+        "method": "Fresh repository readback",
+        "missing_count": 0
+      },
+      "schema": "LQ_TASK_ACCEPTANCE:v1",
+      "task_id": "T002"
+    },
+    "claim_generation": 1,
+    "exact_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+    "issue_number": 150,
+    "summary": "T002 traceability audit passed.",
+    "task_id": "T002",
+    "worker_id": "A"
+  },
+  "request_id": "worker-a-20260924T162100Z-t002-complete",
+  "request_sha256": "8d5142e8b8ac68f788c726a12d76b0aaf95a80d232e102c36ed3ecd4fc5545f6",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
+  "work_context": {
+    "claim_generation": 1,
+    "expected_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+    "issue_number": 150,
+    "last_progress_at": "2026-09-24T16:21:00Z",
+    "next_recovery_action": "RECONCILE_TASK_COMPLETE",
+    "operation_id": "worker-a-20260924T162100Z-t002-complete-op",
+    "owner_run_id": "worker-a-20260924T162000Z-t002",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-a-20260924T162100Z-t002-complete.json",
+    "task_id": "T002",
+    "work_phase": "COMPLETION_SUBMITTED",
+    "worker_id": "A"
+  }
+}
