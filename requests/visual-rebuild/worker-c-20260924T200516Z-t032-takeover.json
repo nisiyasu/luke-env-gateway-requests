@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-09-24T20:05:16Z",
+  "expected_lane_head": "a809c0be116ac5354ad809dde7ecad25ac09a5e9",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-c-20260924T200516Z-t032-takeover-op",
+  "operation_type": "WORK_CLAIM_TAKEOVER",
+  "owner_run_id": "worker-c-20260924T200516Z-t032",
+  "payload": {
+    "issue_number": 160,
+    "task_id": "T032",
+    "worker_capabilities": [
+      "STANDARD"
+    ],
+    "worker_id": "C"
+  },
+  "request_id": "worker-c-20260924T200516Z-t032-takeover",
+  "request_sha256": "192153704a21c9a57681791b1f01bcb79471546db8e978a0dc8a44fd2298ba27",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
