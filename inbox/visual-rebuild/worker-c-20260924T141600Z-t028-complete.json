@@ -1,0 +1,13 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-c-20260924T141600Z-t028-complete",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-c-20260924T140900Z-t028",
+  "lease_epoch":0,
+  "operation_id":"worker-c-20260924T141600Z-t028-complete-op",
+  "operation_type":"TASK_COMPLETE",
+  "expected_lane_head":"b4261786da476fd38d61a88b42c8c3319052b316",
+  "payload":{"issue_number":156,"task_id":"T028","worker_id":"C","claim_generation":1,"exact_head":"b4261786da476fd38d61a88b42c8c3319052b316","summary":"T028 verifies deterministic GLB 2.0 loading through Three.js GLTFLoader on the exact applied implementation HEAD without legacy scene reuse.","acceptance":{"schema":"LQ_TASK_ACCEPTANCE:v1","task_id":"T028","evaluator_id":"INFRASTRUCTURE_TEST_V1","result":"PASS","accepted_head":"b4261786da476fd38d61a88b42c8c3319052b316","runtime_config":{"platform":"MSI Playwright Chromium exact-head evaluator","command":"python http.server 4173 + Playwright Chromium GLB loader assertion","viewport_css_px":[941,1672],"dpr":1},"evidence_artifacts":[{"kind":"infrastructure-test","uri":"repo://nisiyasu/-luke-quest@b4261786da476fd38d61a88b42c8c3319052b316/prototypes/target-image-threejs/verification/t028-infrastructure-test-v1.json","sha256":"f031dd5b4c10726dbf5977893a2600dce6784f9f7b2528c062ce7e2a616efbfe"}],"evaluated_at":"2026-09-24T14:16:00Z"}},
+  "work_context":{"issue_number":156,"task_id":"T028","worker_id":"C","owner_run_id":"worker-c-20260924T140900Z-t028","claim_generation":1,"operation_id":"worker-c-20260924T141600Z-t028-complete-op","work_phase":"COMPLETION_SUBMITTED","submitted_payload_reference":"inbox/visual-rebuild/worker-c-20260924T141600Z-t028-complete.json","expected_head":"b4261786da476fd38d61a88b42c8c3319052b316","last_progress_at":"2026-09-24T14:16:00Z","next_recovery_action":"RECONCILE_TASK_COMPLETE"},
+  "created_at":"2026-09-24T14:16:00Z"
+}
