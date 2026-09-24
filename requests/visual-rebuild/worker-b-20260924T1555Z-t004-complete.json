@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-09-24T15:55:00Z",
+  "expected_lane_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "visual-rebuild",
+  "lease_epoch": 0,
+  "operation_id": "worker-b-20260924T1555Z-t004-complete-op",
+  "operation_type": "TASK_COMPLETE",
+  "owner_run_id": "worker-b-20260924T1549Z-t004",
+  "payload": {
+    "acceptance": {
+      "accepted_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+      "evaluated_at": "2026-09-24T15:55:00Z",
+      "evaluator_id": "INFRASTRUCTURE_TEST_V1",
+      "evidence_artifacts": [
+        {
+          "kind": "planning-authority",
+          "sha256": "971cdbc9f19c6e63d3c7859e0a53d5cf0df1d950de95f3ca204c7f267c00136c",
+          "uri": "repo://nisiyasu/-luke-quest@88694c2812c18938c8d72db3c5933b3efba2e428/specs/001-target-image-threejs/DEVELOPMENT_PIPELINE_v1.md"
+        }
+      ],
+      "result": "PASS",
+      "runtime_config": {
+        "command": "GitHub fetch_file at pinned SPEC_COMMIT + git cat-file SHA256 verification",
+        "platform": "GitHub authority + MSI read-only verification"
+      },
+      "schema": "LQ_TASK_ACCEPTANCE:v1",
+      "task_id": "T004"
+    },
+    "claim_generation": 1,
+    "exact_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+    "issue_number": 152,
+    "summary": "T004 verified the pinned SPEC_COMMIT contains DEVELOPMENT_PIPELINE_v1.md as the durable engineering-process authority; no implementation-root mutation is required or permitted for this planning artifact.",
+    "task_id": "T004",
+    "worker_id": "B"
+  },
+  "request_id": "worker-b-20260924T1555Z-t004-complete",
+  "request_sha256": "871a299007169ffa666a3e27018f29cdd9a929fb4abdb1ee8cce95576232a760",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1",
+  "work_context": {
+    "claim_generation": 1,
+    "expected_head": "6ce965c96a09d965d9c7c65302b27340b127d0b6",
+    "issue_number": 152,
+    "last_progress_at": "2026-09-24T15:55:00Z",
+    "next_recovery_action": "RECONCILE_TASK_COMPLETE",
+    "operation_id": "worker-b-20260924T1555Z-t004-complete-op",
+    "owner_run_id": "worker-b-20260924T1549Z-t004",
+    "submitted_payload_reference": "inbox/visual-rebuild/worker-b-20260924T1555Z-t004-complete.json",
+    "task_id": "T004",
+    "work_phase": "COMPLETION_SUBMITTED",
+    "worker_id": "B"
+  }
+}
