@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-09-24T21:33:00Z",
+  "expected_lane_head": "5fd6688514b4aa5705cd18279f91916bff7f2264",
+  "expected_target_identity": {
+    "target_blob_sha": "b7281e6580689a7a22cfa3b67d500950e4af7285",
+    "target_source_commit_sha": "90635ceff9d35d69f80da350df1e6ea0610657dd"
+  },
+  "lane_id": "field",
+  "lease_epoch": 64,
+  "operation_id": "m02p01-evidence-comment2-20260925T0633JST-op",
+  "operation_type": "ISSUE_COMMENT",
+  "owner_run_id": "CHAT-EVIDENCE-REPAIR-20260925",
+  "payload": {
+    "body": "[LQ_GATEWAY_OP:m02p01-evidence-comment2-20260925T0633JST-op]\\n\\nM02-P01 runtime evidence re-gate: PASS.\\n\\n- implementation HEAD: `5fd6688514b4aa5705cd18279f91916bff7f2264`\\n- GitHub Actions run `36059854184`: SUCCESS\\n- artifact `10833967344`: exact-head visible runtime evidence\\n- 390x844 and 864x1536 captures are visibly rendered and non-black.\\n- RDC independent liveness checks PASS: mean luminance 85.02 / 85.502; near-black ratio 0.0978 / 0.069282.\\n- runtime readiness at both sizes: m02=pass, m03=pass, scene=ready.\\n- visual review confirms bridge, river, forest, player and HUD are present.\\n- local false-negative cause found: multiple stale listeners occupied port 8140 and served another LUKE worktree. After clearing stale listeners and binding a clean exact-HEAD server, RDC reproduced the valid capture.\\n- unsupported explicit workflow-dispatch path produced credential-boundary 403 and has been fail-closed; it is not required because push-triggered Actions evidence already succeeded.\\n\\nBlack-capture failure is repaired. Owner subjective experience and physical iPhone verification remain downstream PENDING and are not claimed.",
+    "issue_number": 28
+  },
+  "request_id": "m02p01-evidence-comment2-20260925T0633JST",
+  "request_sha256": "c719c78f386284f72d68758547179f1b26618f68e57451c1d7e791e0cf5b302c",
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST:v1"
+}
