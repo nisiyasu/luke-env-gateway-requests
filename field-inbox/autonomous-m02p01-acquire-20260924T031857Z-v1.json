@@ -1,0 +1,12 @@
+{
+  "schema": "LUKE_QUEST_CANONICAL_FIELD_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "autonomous-m02p01-acquire-20260924T031857Z-v1",
+  "lane_id": "field",
+  "owner_run_id": "scheduled-luke-quest-build-loop-20260924T031857Z",
+  "lease_epoch": 0,
+  "operation_id": "op-autonomous-m02p01-acquire-20260924T031857Z-v1",
+  "operation_type": "LEASE_ACQUIRE",
+  "expected_lane_head": null,
+  "payload": {"ttl_seconds": 1800},
+  "created_at": "2026-09-24T03:18:57Z"
+}
