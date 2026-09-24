@@ -1,0 +1,13 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-c-20260924T1512Z-t031-complete",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-c-20260924T1503Z-t031",
+  "lease_epoch":0,
+  "operation_id":"worker-c-20260924T1512Z-t031-complete-op",
+  "operation_type":"TASK_COMPLETE",
+  "expected_lane_head":"c9cdc0616452acf97541814c31543a1d32f572d7",
+  "payload":{"issue_number":159,"task_id":"T031","worker_id":"C","claim_generation":1,"exact_head":"c9cdc0616452acf97541814c31543a1d32f572d7","summary":"T031 verifies isolated technical-spike PBR, shadow, instancing, and LOD runtime paths on the exact applied implementation HEAD without granting production visual authority.","acceptance":{"schema":"LQ_TASK_ACCEPTANCE:v1","task_id":"T031","evaluator_id":"INFRASTRUCTURE_TEST_V1","result":"PASS","accepted_head":"c9cdc0616452acf97541814c31543a1d32f572d7","runtime_config":{"command":"python http.server 4173 + Microsoft Edge headless DOM readback","platform":"MSI Microsoft Edge exact-head evaluator"},"evidence_artifacts":[{"kind":"infrastructure-test","uri":"repo://nisiyasu/-luke-quest@c9cdc0616452acf97541814c31543a1d32f572d7/prototypes/target-image-threejs/verification/t031-infrastructure-test-v1.json","sha256":"4ed80954134d4d20dd700325a5f2912dcd7cc75539fd5e611f1b21e99411b09f"}],"evaluated_at":"2026-09-24T15:12:00Z"}},
+  "work_context":{"issue_number":159,"task_id":"T031","worker_id":"C","owner_run_id":"worker-c-20260924T1503Z-t031","claim_generation":1,"operation_id":"worker-c-20260924T1512Z-t031-complete-op","work_phase":"COMPLETION_SUBMITTED","submitted_payload_reference":"inbox/visual-rebuild/worker-c-20260924T1512Z-t031-complete.json","expected_head":"c9cdc0616452acf97541814c31543a1d32f572d7","last_progress_at":"2026-09-24T15:12:00Z","next_recovery_action":"RECONCILE_TASK_COMPLETE"},
+  "created_at":"2026-09-24T15:12:00Z"
+}
