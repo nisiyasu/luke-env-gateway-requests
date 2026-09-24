@@ -1,0 +1,14 @@
+{
+  "schema": "LUKE_QUEST_CANONICAL_FIELD_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "m02p01-reacquire2-20260925T0632JST",
+  "lane_id": "field",
+  "owner_run_id": "CHAT-EVIDENCE-REPAIR-20260925",
+  "lease_epoch": 0,
+  "operation_id": "m02p01-reacquire2-20260925T0632JST-op",
+  "operation_type": "LEASE_ACQUIRE",
+  "expected_lane_head": null,
+  "payload": {
+    "ttl_seconds": 600
+  },
+  "created_at": "2026-09-24T21:32:00Z"
+}
