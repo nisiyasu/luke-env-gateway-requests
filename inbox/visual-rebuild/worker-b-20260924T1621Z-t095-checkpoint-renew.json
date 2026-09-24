@@ -1,0 +1,21 @@
+{
+  "schema": "LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id": "worker-b-20260924T1621Z-t095-checkpoint-renew",
+  "lane_id": "visual-rebuild",
+  "owner_run_id": "worker-b-20260924T1557Z-t095",
+  "lease_epoch": 0,
+  "operation_id": "worker-b-20260924T1621Z-t095-checkpoint-renew-op",
+  "operation_type": "WORK_CLAIM_RENEW",
+  "expected_lane_head": "f5bcaf2815b516ec3335f6c5c6e3b5b1d917101a",
+  "payload": {
+    "issue_number": 223,
+    "task_id": "T095",
+    "worker_id": "B",
+    "claim_generation": 1,
+    "claim_ttl_seconds": 7200,
+    "progress_deadline_seconds": 1800,
+    "phase": "RECOVERY_PENDING",
+    "next_recovery_action": "OWNER_GATE_CONTROL_PLANE_ANOMALY: Request finalizer rejects WORK_SUPPLY_RECONCILE as operation_type not allowlisted; Native tree already has 114 unique T001-T114 leaves, missing=[]; deploy finalizer allowlist then FULL reconcile and complete T095"
+  },
+  "created_at": "2026-09-24T16:19:00Z"
+}
