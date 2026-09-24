@@ -1,0 +1,13 @@
+{
+  "schema":"LUKE_QUEST_ENV_GATEWAY_REQUEST_DRAFT:v1",
+  "request_id":"worker-c-20260924T132000Z-t025-complete",
+  "lane_id":"visual-rebuild",
+  "owner_run_id":"worker-c-20260924T130900Z-t025",
+  "lease_epoch":0,
+  "operation_id":"worker-c-20260924T132000Z-t025-complete-op",
+  "operation_type":"TASK_COMPLETE",
+  "expected_lane_head":"330a5b3e08237d6ce425b7e55273d23f05730bdb",
+  "payload":{"issue_number":153,"task_id":"T025","worker_id":"C","claim_generation":1,"exact_head":"330a5b3e08237d6ce425b7e55273d23f05730bdb","summary":"T025 starts a pinned Three.js 0.180.0 candidate runtime as a clean-room minimal scene and verifies rendering at the exact applied HEAD.","acceptance":{"schema":"LQ_TASK_ACCEPTANCE:v1","task_id":"T025","evaluator_id":"INFRASTRUCTURE_TEST_V1","result":"PASS","accepted_head":"330a5b3e08237d6ce425b7e55273d23f05730bdb","runtime_config":{"platform":"MSI Chrome headless exact-head evaluator","command":"python http.server 8142 + Chrome headless 941x1672 screenshot","viewport_css_px":[941,1672],"dpr":1},"evidence_artifacts":[{"kind":"infrastructure-test","sha256":"7b5d31de2fb3a2982fc7f488068478407fb34c8277faa07d9ad8c1f1a8908565","uri":"repo://nisiyasu/-luke-quest@330a5b3e08237d6ce425b7e55273d23f05730bdb/prototypes/target-image-threejs/verification/t025-infrastructure-test-v1.json"}],"evaluated_at":"2026-09-24T13:20:00Z"}},
+  "work_context":{"issue_number":153,"task_id":"T025","worker_id":"C","owner_run_id":"worker-c-20260924T130900Z-t025","claim_generation":1,"operation_id":"worker-c-20260924T132000Z-t025-complete-op","work_phase":"COMPLETION_SUBMITTED","submitted_payload_reference":"inbox/visual-rebuild/worker-c-20260924T132000Z-t025-complete.json","expected_head":"330a5b3e08237d6ce425b7e55273d23f05730bdb","last_progress_at":"2026-09-24T13:20:00Z","next_recovery_action":"RECONCILE_TASK_COMPLETE"},
+  "created_at":"2026-09-24T13:20:00Z"
+}
